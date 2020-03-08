@@ -122,8 +122,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(COMMON, 'static')]
+<<<<<<< HEAD
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+=======
+STATIC_ROOT = PUBLIC_DIR
+>>>>>>> 2a9e0c39b7e7b6c6ca725d79178cacf7b4769511
 
 # Media
 MEDIA_URL = '/media/'
@@ -144,4 +148,8 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
 SECURE_BROWSER_XSS_FILTER = True
+<<<<<<< HEAD
 SECURE_CONTENT_TYPE_NOSNIFF = True
+=======
+SECURE_CONTENT_TYPE_NOSNIFF = True
+>>>>>>> 2a9e0c39b7e7b6c6ca725d79178cacf7b4769511
