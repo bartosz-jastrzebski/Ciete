@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load gallery_tags %}
+{% load static %}
+{% block content %}
+ <section id="offer" class="block">
+     <div class="block__header">
+        <h1>CO <strong>ROBIMY</strong>?</h1>
+        <p class="block__text">Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. Kompleksowo.</p>
+      </div>
+
+      <div class="block__content">
+        <div class="block__content--about">
+          <div class="content-item">
+            <!-- <img src="" alt=""> -->
+            <h2>Doradztwo</h2>
+            <p class="content-item--text">Zapewniamy fachową poradę zarówno w kwestii rozplanowania wnętrza jak i stylu.</p>
+          </div>
+
+          <div class="content-item">
+            
+            <h2>Projekt</h2>
+            <p class="content-item--text">Masz pewność, że do Twoich potrzeb, podejdziemy indywidualnie.</p>
+          </div>
+
+          <div class="content-item">
+            
+            <h2>Wycena</h2>
+            <p class="content-item--text">Oferujemy elastyczność w kwestii ceny, możesz mieć pewność, że będziesz zadowolony.</p>
+          </div>
+          <div class="content-item">
+            
+            <h2>Realizacja</h2>
+            <p class="content-item--text">Zaczynamy jak tylko projekt zostanie przez Ciebie zatwierdzony. Lorem ipsum</p>
+          </div>
+        </div>
+      </div>
+
+ </section>
+
+<section id="about" class="block">
+
+      <div class="block__content small-gallery">
+        <img src="{% static 'images/choose1.jpg' %}" alt="" class="translated">
+        <img src="{% static 'images/choose2.jpg' %}" alt="" class="translated">
+        <img src="" alt="" class="translated">
+        <img src="" alt="" class="translated">
+        <img src="" alt="" class="translated">
+      </div>
+
+      <div class="block__header">
+        <h1>DLACZEGO <strong>MY</strong>?</h1>
+        <!-- <p class="block__text">Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. Kompleksowo.</p> -->
+        <div class="block__text--choose">
+          <h6 class="moved">Nie trzymamy się utartych schematów.</h6>
+          <p  class="moved">Do każdego projektu podchodzimy indywidualnie.</p>
+          <h6 class="moved">Stosujemy niestandardowe materiały.</h6>
+          <p  class="moved">Stal, mosiądz, solid surface, kompozyty, drewno.</p>
+          <h6 class="moved">Przywiązujemy wagę do detalu.</h6>
+          <p  class="moved">Każdy milimetr ma znaczenie.</p>
+          <h6 class="moved">Lubimy wyzwania</h6>
+          <p  class="moved">"Niemożliwe" dla nas jest tylko trudne.</p>
+        </div>
+      </div>
+
+</section>
+
+<section id="portfolio" class="block" style="display: none;">
+      {% get_main_page_galleries as galleries %}
+      <div class="block__header">
+        <h1>ZREALIZOWANE <strong>PROJEKTY</strong></h1>
+        <div class="block__content">
+          <div class="block__content--gallery">
+
+            {% for gallery in galleries %}
+            <div class="flex-item">
+              <div class="gallery-container" data-title="{{ gallery.title }}">
+                <div class="gallery-overlay"></div>
+                <img src="{{ gallery.thumbnail.url }}" alt="">
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+</section>
+
+<section id="team" class="block" style="display: none;">
+      <div class="block__header">
+        <h1>NASZ <strong>ZESPÓŁ</strong></h1>
+        <p class="block__text">Grupa przyjaciół mieszkających razem w Warszawie. Fascynuje nas prostota duńskiego designu. Zaczęliśmy od wspólnego dłubania w garażu. Potem zrealizowane pierwsze projekty. Koniec rozmowy na czacie. Wpisz wiadomość...</p>
+      </div>
+
+      <div class="block__content">
+        <div class="block__content--team">
+          <div class="team-member">
+            <img src="{% static 'images/team1.jpg' %}" alt="" class="img-circle">
+
+            <h4 class="m-top-20">Natalia <strong>Budnik</strong></h4>
+
+            <div class="separator"></div>
+            <h5>+48 692 291 001</h5>
+            <!-- <h5>natalia@ciete.eu</h5>
+            <div class="separator"></div>
+            <ul class="list-inline">
+                <li><a href=""><img src="images/icons-facebook-100.png" alt=""></a></li>
+                <li><a href=""><img src="images/icons-instagram-old-100.png" alt=""></a></li>
+                <li><a href=""><img src="images/icons-linkedin-100.png" alt=""></a></li>
+            </ul> -->
+          </div>
+
+          <div class="team-member">
+            <img src="{% static 'images/team2.jpg' %}" alt="" class="img-circle">
+
+            <h4 class="m-top-20">Tomasz <strong>Budnik</strong></h4>
+
+            <div class="separator"></div>
+            <h5>+48 721 323 373</h5>
+          </div>
+
+          <div class="team-member">
+            <img src="{% static 'images/team3.jpg' %}" alt="" class="img-circle">
+
+            <h4 class="m-top-20">Krzysztof <strong>Kita</strong></h4>
+
+            <div class="separator"></div>
+            <h5>+48 721 721 137</h5>
+          </div>
+        </div>
+      </div>
+
+</section >
+{% endblock %}

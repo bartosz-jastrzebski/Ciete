@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cięte</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo-small-brown.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,500,600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css" rel="stylesheet"> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script> -->
+
+  </head>
+  <body style="overflow: hidden;">
+
+    <header id="home">
+      <nav class="navbar">
+        <div class="navbar-logo" id="home-link">
+          <div class="navbar-logo__headers">
+            <h2>CIĘTE</h2>
+            <h6>Warszawa</h6>
+          </div>
+        </div>
+
+        <div class="navbar-menu">
+          <div class="navbar-menu__item" ></div>
+          <div class="navbar-menu__item" ></div>
+          <div class="navbar-menu__item" ></div>
+          <div class="navbar-menu__item" ></div>
+        </div>
+      </nav>
+
+      <div class="overlay">
+        <div class="text-middle">
+          <h2>UNDER <strong>CONSTRUCTION</strong>!</h2>
+          <h2>VISIT US SOON.</h2>
+        </div>
+      </div>
+
+      <img id="img-home" src="{% static 'images/home.jpg' %}" alt="">
+      
+    </header>
+
+    <section id="offer" class="block">
+      <div class="block__header">
+        <h1>UNDER <strong>CONSTRUCTION</strong>!</h1>
+        <h1>VISIT US SOON.</h1>
+        <p class="block__text"></p>
+      </div>
+
+    </section>
+
+    <div class="languages" style="position:absolute; width:100%;">
+      <a href="{% url 'construction' %}" class="active">EN</a>
+      <a href="{% url 'index' %}">PL</a>
+    </div>
+
+    <style>
+      body {
+        overflow:hidden;}
+      h2 {
+        font-size: 30px;
+      }
+      h2 strong {
+        font-size: 36px;
+        font-weight: bold;
+        color: gray;
+      }
+      .text-middle { 
+        position:absolute;
+        top: 30%;
+        left: 40%;
+        color:white;  
+      }
+      #offer {
+        display: none;
+      }
+      
+      @media all and (max-width: 1280px), (max-device-width: 1280px) {
+        .text-middle {
+          display:none;
+        }
+        #offer {
+          display: block;
+        }
+      }
+
+    </style>
+    <!-- <script src="js/main.js"></script> -->
+    <script>
+      var overlay = document.getElementsByClassName('overlay')[0];
+      var imgHome = document.getElementById('img-home');
+      var imgHomeHeight = this.getComputedStyle(imgHome)['height'];
+      imgHomeHeight = Number(imgHomeHeight.replace('px', ''));
+      overlay.style.height = `${imgHomeHeight}px`;
+      window.onresize = function() {
+        overlay.style.height = `${imgHomeHeight}px`;
+      }
+    </script>
+
+  </body>
+</html>
+
+
+
+
+ 
+
+
+
+ 

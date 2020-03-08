@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cięte</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo-small-brown.png' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,500,600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Matomo -->
+    <!--<script type="text/javascript" src="{% static 'js/statictics.js' %}"></script>-->
+
+  </head>
+  <body style="overflow: hidden;">
+
+    <header id="home">
+      <nav class="navbar">
+        <div class="navbar-logo" id="home-link">
+          <div class="navbar-logo__headers">
+            <h2>CIĘTE</h2>
+            <h6>Warszawa</h6>
+          </div>
+        </div>
+
+        <div class="navbar-menu">
+          <div class="navbar-menu__item" ><a href="" id="offer-link">OFERTA</a></div>
+          <div class="navbar-menu__item" ><a href="" id="portfolio-link">PORTFOLIO</a></div>
+          <div class="navbar-menu__item" ><a href="" id="team-link">O NAS</a></div>
+          <div class="navbar-menu__item" ><a href="" id="contact-link">KONTAKT</a></div>
+        </div>
+      </nav>
+
+      <div class="overlay"></div>
+      <img id="img-home" src="{% static 'images/home.jpg' %}" alt="">
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+
+    <footer id="contact" style="display: none;">
+
+      <div class="wrapper">
+
+        <div class="wrapper__item--contact">
+          <div class="wrapper__item--logo">
+            <a href=""><img class="bottom-logo" src="{% static 'images/logo-big.png' %}"></a>
+            <ul class="list-inline">
+              <!-- <li><a href=""><img src="images/icons-facebook-100.png" alt=""></a></li> -->
+              <li><a href="https://www.instagram.com/ciete.warszawa/" target="_blank"><img src="{% static 'images/icons-instagram-old-100.png' %}" alt=""></a></li>
+              <!-- <li><a href=""><img src="images/icons-linkedin-100.png" alt=""></a></li> -->
+            </ul>
+          </div>
+          <div class="wrapper__item--address">
+            <!-- <div class="contact__item">
+              <i class="material-icons">home</i>
+              <div class="contact__text">
+                <strong class="contact__text--title">Adres:</strong>
+                <div class="contact__text--content">
+                  <p>Nibylandia</p>
+                  <p>ul. Sopocka 72/22</p>
+                  <p>00-000</p>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="contact__item">
+              <i class="material-icons">local_phone</i>
+              <div class="contact__text">
+                <strong class="contact__text--title">Telefon:</strong>
+                <div class="contact__text--content">
+                  <p>+48 692 291 001</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__item">
+              <i class="material-icons">email</i>
+              <div class="contact__text">
+                <strong class="contact__text--title">Email:</strong>
+                <div class="contact__text--content">
+                  <p>info@ciete.eu</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrapper__item--form">
+          <div class="sent">
+            <h1>Dziękujemy za wiadomość!</h1>
+            <h3>Wkrótce odezwiemy się do Ciebie.</h3>
+          </div>
+          <div class="unsent">
+            <h1>Ups! Coś poszło nie tak</h1>
+            <h3>Odśwież stronę i spróbuj ponownie.</h3>
+          </div>
+          <div class="form-wrap">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+          <h2>Napisz do nas:</h2>
+          <form action="." method="post" id="contact-form">
+            {{ form.name.errors }}
+            {{ form.name }}
+            {{ form.email.errors }}
+            {{ form.email }}
+            {{ form.message }}
+            {% csrf_token %}
+            <button type="submit" class="btn-send"><i class="material-icons">double_arrow</i></button>
+          </form>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <div class="languages">
+      <a href="{% url 'construction' %}">EN</a>
+      <a href="#" class="active">PL</a>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/gallery.js' %}" ></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script>
+      window.onload = (event)=> {
+        document.body.style.overflow = "auto";
+        Main();
+      }
+      window.onbeforeunload = function () {
+         window.scrollTo(0, 0);
+      }
+    </script>
+  </body>
+
+
+  <div id="simplecookienotification_v01" style="display: block; z-index: 99999; min-height: 35px; width: 100%; position: fixed; background: rgb(31, 31, 31); border-image: initial; border-top: 1px solid rgb(198, 198, 198); text-align: center; right: 0px; color: rgb(119, 119, 119); bottom: 0px; left: 0px; border-right-color: rgb(198, 198, 198); border-bottom-color: rgb(198, 198, 198); border-left-color: rgb(198, 198, 198);">
+  <div style="padding:10px; margin-left:15px; margin-right:15px; font-size:14px; font-weight:normal;">
+  <span id="simplecookienotification_v01_powiadomienie">Ta strona używa plików cookies.</span><span id="br_pc_title_html"><br></span>
+  <a id="simplecookienotification_v01_polityka" href="http://jakwylaczyccookie.pl/polityka-cookie/" style="color: rgb(198, 198, 198);">Polityka Prywatności</a><span id="br_pc2_title_html"> &nbsp;&nbsp; </span>
+  <a id="simplecookienotification_v01_info" href="http://jakwylaczyccookie.pl/jak-wylaczyc-pliki-cookies/" style="color: rgb(198, 198, 198);">Jak wyłączyć cookies?</a><span id="br_pc3_title_html"> &nbsp;&nbsp; </span>
+  <a id="simplecookienotification_v01_info2" href="https://nety.pl/cyberbezpieczenstwo" style="color: rgb(198, 198, 198);">Cyberbezpieczeństwo</a><div id="jwc_hr1" style="height: 10px; display: none;"></div>
+  <a id="okbutton" href="javascript:simplecookienotification_v01_create_cookie('simplecookienotification_v01',1,7);" style="position: absolute; background: rgb(198, 198, 198); color: rgb(255, 255, 255); padding: 5px 15px; text-decoration: none; font-size: 12px; font-weight: normal; border: 0px solid rgb(31, 31, 31); border-radius: 0px; top: 5px; right: 5px;">× </a><div id="jwc_hr2" style="height: 10px; display: none;"></div>
+  </div>
+  </div>
+  <script type="text/javascript">var galTable= new Array(); var galx = 0;</script><script type="text/javascript">function simplecookienotification_v01_create_cookie(name,value,days) { if (days) { var date = new Date(); date.setTime(date.getTime()+(days*24*60*60*1000)); var expires = "; expires="+date.toGMTString(); } else var expires = ""; document.cookie = name+"="+value+expires+"; path=/"; document.getElementById("simplecookienotification_v01").style.display = "none"; } function simplecookienotification_v01_read_cookie(name) { var nameEQ = name + "="; var ca = document.cookie.split(";"); for(var i=0;i < ca.length;i++) { var c = ca[i]; while (c.charAt(0)==" ") c = c.substring(1,c.length); if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length); }return null;}var simplecookienotification_v01_jest = simplecookienotification_v01_read_cookie("simplecookienotification_v01");if(simplecookienotification_v01_jest==1){ document.getElementById("simplecookienotification_v01").style.display = "none"; }</script>
+
+</html>
+
+
+
+
+
