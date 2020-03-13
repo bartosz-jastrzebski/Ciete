@@ -42,9 +42,9 @@ var animationCountdown = 0
 function scrollEvent (id) {
     let obj = document.getElementById(`${id}-link`)
     obj.addEventListener('click', function(event) {
-        portfolio.style.display = 'flex';
-        team.style.display = 'flex';
-        contact.style.display = 'block';
+        // portfolio.style.display = 'flex';
+        // team.style.display = 'flex';
+        // contact.style.display = 'block';
         moved.forEach(function(e){e.classList.remove('moved')})
         counter = 1200
         event.preventDefault()
@@ -66,16 +66,16 @@ function Main () {
 
 if (window.outerWidth > 1060) {
     window.onscroll = ScrollAnimate
-} else {
-    moved.forEach(function(e){e.classList.remove('moved')})
-    portfolio.style.display = 'flex';
-    team.style.display = 'flex';
-    contact.style.display = 'block';
-    images[2].setAttribute('src', '/static/images/choose3.jpg')
-    images[3].setAttribute('src', '/static/images/choose4.jpg')
-    images[4].setAttribute('src', '/static/images/choose5.jpg')
-    animate();
-}
+} //else {
+moved.forEach(function(e){e.classList.remove('moved')})
+portfolio.style.display = 'flex';
+team.style.display = 'flex';
+contact.style.display = 'block';
+images[2].setAttribute('src', '/static/images/choose3.jpg')
+images[3].setAttribute('src', '/static/images/choose4.jpg')
+images[4].setAttribute('src', '/static/images/choose5.jpg')
+animate();
+// }
 
 
 document.body.onresize = function() {

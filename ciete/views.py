@@ -37,37 +37,38 @@ def send_contact_data(request):
     user_email = request.POST['email']
 
     message = request.POST['message']
-    company_subject = 'CIĘTE - wypełniony formularz, wiadomość od {} '.format(user_name)
-    recipents = [settings.EMAIL_HOST_USER]
+    company_subject = 'Cięte - wiadomość od {} '.format(user_name)
 
-    user_subject = 'Cięte - Dziękujemy za wiadomość '
+    user_subject = 'Dziękujemy za wiadomość '
     user_message = None
-    user_html = loader.render_to_string('mail.html')
+    user_html = loader.render_to_string('mail.html', {'name': user_name})
     try:
         # Send message from user 
-        send_mail(
+        notification_mail = EmailMultiAlternatives(
             subject=company_subject,
             from_email=user_email,
-            recipient_list=recipents,
-            message=message,
-            fail_silently=False
+            to=[settings.EMAIL_HOST_USER],
+            body=message,
         )
         # Send confirmation email back to user
         user_mail = EmailMultiAlternatives(
             subject=user_subject,
             from_email=settings.EMAIL_HOST_USER,
             to=[user_email],
-            body=user_message
+            body=user_message,
+            headers={'From': 'Cięte'}
         )
+
         file_path = settings.STATICFILES_DIRS[0] + '/images/logo-email.png'
         with open(file_path, 'rb') as img:
             image = img.read()
         mime_image = MIMEImage(image)
         mime_image.add_header('Content-ID', '<logo>')
-
         user_mail.content_subtype = 'html'
         user_mail.attach_alternative(user_html, 'text/html')
         user_mail.attach(mime_image)
+
+        notification_mail.send(fail_silently=False)
         user_mail.send(fail_silently=False)
 
     except SMTPException:
