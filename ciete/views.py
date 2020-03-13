@@ -31,8 +31,8 @@ def send_contact_data(request):
     name = request.POST['name']
     email = request.POST['email']
     message = request.POST['message']
-    subject = '{} chce nowa kuchnia'.format(name)
-    recipents = ['b.jastrzebsk89@gmail.com']
+    subject = 'Wypełniony formularz, wiadomość od {} '.format(name)
+    recipents = ['info@ciete.eu']
 
     try:
         send_mail(subject=subject,
