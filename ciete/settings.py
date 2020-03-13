@@ -26,8 +26,8 @@ with open(os.path.join(BASE_DIR, 'secret.txt'), 'r') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['ciete.usermd.net']
+DEBUG = True
+# ALLOWED_HOSTS = ['ciete.usermd.net']
 
 
 # Application definition
@@ -130,18 +130,29 @@ MEDIA_ROOT = os.path.join(PUBLIC_DIR, 'media/')
 
 
 
-# Other
+# Email
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+with open('email_data.txt', 'r') as file:
+    host = file.readline().strip()
+    host_user = file.readline().strip()
+    host_password = file.readline().strip()
+    port= int(file.readline().strip())
 
+EMAIL_HOST = host
+EMAIL_HOST_USER = host_user
+EMAIL_HOST_PASSWORD = host_password
+EMAIL_PORT = port
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = True
 
 # DEPLOY
 
-
-X_FRAME_OPTIONS = 'DENY'
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
+if DEBUG == False:
+    X_FRAME_OPTIONS = 'DENY'
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True

@@ -1,0 +1,6 @@
+db.sqlite3
+__pycache__
+*.pyc
+secret.txt
+email_data.txt
+commonfiles/static/admin
