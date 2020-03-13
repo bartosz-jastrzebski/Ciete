@@ -25,6 +25,7 @@ def get_gallery_photos(request, title):
     photos = [photo.image.url for photo in gallery.photos.all()]
     return JsonResponse({'photos': photos})
 
+
 @ajax_required
 @require_POST
 def send_contact_data(request):
