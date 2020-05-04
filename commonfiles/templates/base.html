@@ -6,7 +6,9 @@
     <title>Cięte</title>
     <link rel="icon" type="image/png" href="{% static 'images/logo-small-brown.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,500,600&amp;display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,500,600&amp;display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Matomo -->
@@ -35,6 +37,17 @@
       <div class="overlay"></div>
       <img id="img-home" src="{% static 'images/home.jpg' %}" alt="">
     </header>
+    <script>
+      var overlay = document.getElementsByClassName('overlay')[0]
+      var overlayHeight = this.getComputedStyle(overlay)['height']
+      overlayHeight = Number(overlayHeight.replace('px', ''))
+
+      var imgHome = document.getElementById('img-home')
+      var imgHomeHeight = this.getComputedStyle(imgHome)['height']
+      imgHomeHeight = Number(imgHomeHeight.replace('px', ''))
+
+      overlay.style.height = `${imgHomeHeight}px`;
+    </script>
 
     {% block content %}
     {% endblock %}
@@ -102,14 +115,14 @@
             <div class="bottom"></div>
             <div class="left"></div>
             <div class="right"></div>
-          <h2>Napisz do nas:</h2>
-          <form action="." method="post" id="contact-form">
-            {{ form.name.errors }}
-            {{ form.name }}
-            {{ form.email.errors }}
-            {{ form.email }}
-            {{ form.message }}
-            {% csrf_token %}
+            <form action="." method="post" id="contact-form">
+              <h2>Napisz do nas:</h2>
+              {{ form.name.errors }}
+              {{ form.name }}
+              {{ form.email.errors }}
+              {{ form.email }}
+              {{ form.message }}
+              {% csrf_token %}
             <button type="submit" class="btn-send"><i class="material-icons">double_arrow</i></button>
           </form>
           </div>

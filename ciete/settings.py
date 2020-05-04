@@ -108,6 +108,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pl'
 
+LANGUAGES = [
+    ('pl', 'polski'),
+    ('en', 'english'),
+    ('dk', 'duński')
+    ]
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -132,19 +138,20 @@ MEDIA_ROOT = os.path.join(PUBLIC_DIR, 'media/')
 
 # Email
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-with open('email_data.txt', 'r') as file:
-    host = file.readline().strip()
-    host_user = file.readline().strip()
-    host_password = file.readline().strip()
-    port= int(file.readline().strip())
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# with open('email_data.txt', 'r') as file:
+#     host = file.readline().strip()
+#     host_user = file.readline().strip()
+#     host_password = file.readline().strip()
+#     port= int(file.readline().strip())
 
-EMAIL_HOST = host
-EMAIL_HOST_USER = host_user
-EMAIL_HOST_PASSWORD = host_password
-EMAIL_PORT = port
-EMAIL_USE_TLS = True
+# EMAIL_HOST = host
+# EMAIL_HOST_USER = host_user
+# EMAIL_HOST_PASSWORD = host_password
+# EMAIL_PORT = port
+# EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = True
+
 
 # DEPLOY
 

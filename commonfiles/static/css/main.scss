@@ -14,7 +14,7 @@ $main-font-color: #545454; //797979
 $main-font-family: 'Nunito Sans', sans-serif;
 $main-font-size: 16px;
 $main-font-weight: 400;
-$title-font-size: 2rem;
+$title-font-size: 20px;
 $title-font-weight: 600;
 $title-font-color: #2a3d45;  //#16293b;
 $navbar-font-family: 'Nunito Sans', sans-serif;
@@ -183,6 +183,7 @@ img {
 
     h1, h6 {
       font-size: inherit;
+      letter-spacing: 6px;
       color: $title-font-color;
     }
 
@@ -539,8 +540,7 @@ figure {
       transform: translateZ(0px);
     }
     h2 {
-      margin: auto;
-      text-align:center;
+      text-align: left;
       font-size: 20px;
       font-family: $main-font-family;
       font-weight: 400;
@@ -552,7 +552,7 @@ figure {
      display: grid;
 
    }
-   form > * {
+   form > input, textarea, button {
     //  display: block;
      outline: none !important;
      background: $form-background;
@@ -700,6 +700,13 @@ figure {
   
 // MEDIA
 
+@media all and (min-width: 900px), (min-device-width: 900px) {
+  .block__text {
+    margin: 30px 120px 30px 0;
+  }
+}
+
+
 @media all and (max-width: 1060px), (max-device-width: 1060px) {
 
   .navbar {
@@ -726,6 +733,10 @@ figure {
   }
   .block {
     margin: 0 30px 0 30px;
+
+    &__text {
+      margin: 30px 0 30px 0;
+    }
   }
 
   .block__content--gallery .flex-item {
