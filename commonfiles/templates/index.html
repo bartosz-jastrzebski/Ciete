@@ -1,36 +1,37 @@
 {% extends 'base.html' %}
 {% load gallery_tags %}
+{% load i18n %}
 {% load static %}
 {% block content %}
  <section id="offer" class="block">
      <div class="block__header">
-        <h1>CO <strong>ROBIMY</strong>?</h1>
-        <p class="block__text">Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. Kompleksowo.</p>
+        <h1>{% trans 'CO' %} <strong>{% trans 'ROBIMY' %}</strong>?</h1>
+        <p class="block__text">{% trans 'Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. Kompleksowo.' %}</p>
       </div>
 
       <div class="block__content">
         <div class="block__content--about">
           <div class="content-item">
             <!-- <img src="" alt=""> -->
-            <h2>Doradztwo</h2>
-            <p class="content-item--text">Zapewniamy fachową poradę zarówno w kwestii rozplanowania wnętrza jak i stylu.</p>
+            <h2>{% trans 'Doradztwo' %}</h2>
+            <p class="content-item--text">{% trans 'Zapewniamy fachową poradę zarówno w kwestii rozplanowania wnętrza jak i stylu.' %}</p>
           </div>
 
           <div class="content-item">
             
-            <h2>Projekt</h2>
-            <p class="content-item--text">Masz pewność, że do Twoich potrzeb podejdziemy indywidualnie.</p>
+            <h2>{% trans 'Projekt' %}</h2>
+            <p class="content-item--text">{% trans 'Masz pewność, że do Twoich potrzeb podejdziemy indywidualnie.' %}</p>
           </div>
 
           <div class="content-item">
             
-            <h2>Wycena</h2>
-            <p class="content-item--text">Oferujemy elastyczność w kwestii ceny, możesz mieć pewność, że będziesz zadowolony.</p>
+            <h2>{% trans 'Wycena' %}</h2>
+            <p class="content-item--text">{% trans 'Oferujemy elastyczność w kwestii ceny, możesz mieć pewność, że będziesz zadowolony.' %}</p>
           </div>
           <div class="content-item">
             
-            <h2>Realizacja</h2>
-            <p class="content-item--text">Zaczynamy jak tylko projekt zostanie przez Ciebie zatwierdzony. Lorem ipsum</p>
+            <h2>{% trans 'Realizacja' %}</h2>
+            <p class="content-item--text">{% trans 'Zaczynamy jak tylko projekt zostanie przez Ciebie zatwierdzony.' %}</p>
           </div>
         </div>
       </div>
@@ -48,17 +49,17 @@
       </div>
 
       <div class="block__header">
-        <h1>DLACZEGO <strong>MY</strong>?</h1>
+        <h1>{% trans 'DLACZEGO' %} <strong>{% trans 'MY' %}</strong>?</h1>
         <!-- <p class="block__text">Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. Kompleksowo.</p> -->
         <div class="block__text--choose">
-          <h6 class="moved">Nie trzymamy się utartych schematów.</h6>
-          <p  class="moved">Do każdego projektu podchodzimy indywidualnie.</p>
-          <h6 class="moved">Stosujemy niestandardowe materiały.</h6>
-          <p  class="moved">Stal, mosiądz, solid surface, kompozyty, drewno.</p>
-          <h6 class="moved">Przywiązujemy wagę do detalu.</h6>
-          <p  class="moved">Każdy milimetr ma znaczenie.</p>
-          <h6 class="moved">Lubimy wyzwania</h6>
-          <p  class="moved">"Niemożliwe" dla nas jest tylko trudne.</p>
+          <h6 class="moved">{% trans 'Nie trzymamy się utartych schematów' %}.</h6>
+          <p  class="moved">{% trans 'Do każdego projektu podchodzimy indywidualnie' %}.</p>
+          <h6 class="moved">{% trans 'Stosujemy niestandardowe materiały' %}.</h6>
+          <p  class="moved">{% trans 'Stal, mosiądz, solid surface, kompozyty, drewno' %}.</p>
+          <h6 class="moved">{% trans 'Przywiązujemy wagę do detalu' %}.</h6>
+          <p  class="moved">{% trans 'Każdy milimetr ma znaczenie' %}.</p>
+          <h6 class="moved">{% trans 'Lubimy wyzwania' %}.</h6>
+          <p  class="moved">{% trans '"Niemożliwe" dla nas jest tylko trudne' %}.</p>
         </div>
       </div>
 
@@ -67,7 +68,7 @@
 <section id="portfolio" class="block" style="display: none;">
       {% get_main_page_galleries as galleries %}
       <div class="block__header">
-        <h1>ZREALIZOWANE <strong>PROJEKTY</strong></h1>
+        <h1>{% trans 'ZREALIZOWANE' %} <strong>{% trans 'PROJEKTY' %}</strong></h1>
         <div class="block__content">
           <div class="block__content--gallery">
 
@@ -87,8 +88,8 @@
 
 <section id="team" class="block" style="display: none;">
       <div class="block__header">
-        <h1>NASZ <strong>ZESPÓŁ</strong></h1>
-        <p class="block__text">Grupa przyjaciół mieszkających razem w Warszawie. Fascynuje nas prostota duńskiego designu. Zaczęliśmy od wspólnego dłubania w garażu. Potem zrealizowane pierwsze projekty.</p>
+        <h1>{% trans 'NASZ' %} <strong>{% trans 'ZESPÓŁ' %}</strong></h1>
+        <p class="block__text">{% trans 'Grupa przyjaciół mieszkających razem w Warszawie. Fascynuje nas prostota duńskiego designu. Zaczęliśmy od wspólnego dłubania w garażu. Potem zrealizowane pierwsze projekty.' %}</p>
       </div>
 
       <div class="block__content">

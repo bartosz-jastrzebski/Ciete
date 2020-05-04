@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +28,7 @@ with open(os.path.join(BASE_DIR, 'secret.txt'), 'r') as f:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# ALLOWED_HOSTS = ['ciete.usermd.net']
+ALLOWED_HOSTS = ['ciete.usermd.net', 'localhost']
 
 
 # Application definition
@@ -40,11 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'gallery',
+    'rosetta',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -109,10 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'pl'
 
 LANGUAGES = [
-    ('pl', 'polski'),
-    ('en', 'english'),
-    ('dk', 'duński')
+    ('pl', _('polski')),
+    ('en', _('angielski')),
+    ('dk', _('duński'))
     ]
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 TIME_ZONE = 'UTC'
 
@@ -138,24 +144,26 @@ MEDIA_ROOT = os.path.join(PUBLIC_DIR, 'media/')
 
 # Email
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# with open('email_data.txt', 'r') as file:
-#     host = file.readline().strip()
-#     host_user = file.readline().strip()
-#     host_password = file.readline().strip()
-#     port= int(file.readline().strip())
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    with open('email_data.txt', 'r') as file:
+        host = file.readline().strip()
+        host_user = file.readline().strip()
+        host_password = file.readline().strip()
+        port= int(file.readline().strip())
 
-# EMAIL_HOST = host
-# EMAIL_HOST_USER = host_user
-# EMAIL_HOST_PASSWORD = host_password
-# EMAIL_PORT = port
-# EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = True
+    EMAIL_HOST = host
+    EMAIL_HOST_USER = host_user
+    EMAIL_HOST_PASSWORD = host_password
+    EMAIL_PORT = port
+    EMAIL_USE_TLS = True
+    EMAIL_USE_SSL = True
 
 
 # DEPLOY
 
-if DEBUG == False:
+if not DEBUG:
     X_FRAME_OPTIONS = 'DENY'
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True

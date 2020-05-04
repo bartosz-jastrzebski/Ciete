@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-04 22:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ciete/forms.py:7
+msgid "Imię:"
+msgstr ""
+
+#: ciete/forms.py:8
+msgid "Email:"
+msgstr ""
+
+#: ciete/forms.py:10
+msgid "Wiadmość:"
+msgstr ""
+
+#: ciete/settings.py:116
+msgid "polski"
+msgstr ""
+
+#: ciete/settings.py:117
+msgid "angielski"
+msgstr ""
+
+#: ciete/settings.py:118
+msgid "duński"
+msgstr ""
+
+#: commonfiles/templates/base.html:31
+msgid "OFERTA"
+msgstr ""
+
+#: commonfiles/templates/base.html:32
+msgid "PORTFOLIO"
+msgstr ""
+
+#: commonfiles/templates/base.html:33
+msgid "O NAS"
+msgstr ""
+
+#: commonfiles/templates/base.html:34
+msgid "KONTAKT"
+msgstr ""
+
+#: commonfiles/templates/base.html:86
+msgid "Telefon"
+msgstr ""
+
+#: commonfiles/templates/base.html:96
+msgid "Email"
+msgstr ""
+
+#: commonfiles/templates/base.html:107
+msgid "Dziękujemy za wiadomość"
+msgstr ""
+
+#: commonfiles/templates/base.html:108
+msgid "Wkrótce odezwiemy się do Ciebie"
+msgstr ""
+
+#: commonfiles/templates/base.html:111
+msgid "Ups! Coś poszło nie tak"
+msgstr ""
+
+#: commonfiles/templates/base.html:112
+msgid "Odśwież stronę i spróbuj ponownie"
+msgstr ""
+
+#: commonfiles/templates/base.html:120
+msgid "Napisz do nas"
+msgstr ""
+
+#: commonfiles/templates/index.html:8
+msgid "CO"
+msgstr ""
+
+#: commonfiles/templates/index.html:8
+msgid "ROBIMY"
+msgstr ""
+
+#: commonfiles/templates/index.html:9
+msgid ""
+"Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni "
+"materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i "
+"techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. "
+"Kompleksowo."
+msgstr ""
+
+#: commonfiles/templates/index.html:16
+msgid "Doradztwo"
+msgstr ""
+
+#: commonfiles/templates/index.html:17
+msgid ""
+"Zapewniamy fachową poradę zarówno w kwestii rozplanowania wnętrza jak i "
+"stylu."
+msgstr ""
+
+#: commonfiles/templates/index.html:22
+msgid "Projekt"
+msgstr ""
+
+#: commonfiles/templates/index.html:23
+msgid "Masz pewność, że do Twoich potrzeb podejdziemy indywidualnie."
+msgstr ""
+
+#: commonfiles/templates/index.html:28
+msgid "Wycena"
+msgstr ""
+
+#: commonfiles/templates/index.html:29
+msgid ""
+"Oferujemy elastyczność w kwestii ceny, możesz mieć pewność, że będziesz "
+"zadowolony."
+msgstr ""
+
+#: commonfiles/templates/index.html:33
+msgid "Realizacja"
+msgstr ""
+
+#: commonfiles/templates/index.html:34
+msgid "Zaczynamy jak tylko projekt zostanie przez Ciebie zatwierdzony."
+msgstr ""
+
+#: commonfiles/templates/index.html:52
+msgid "DLACZEGO"
+msgstr ""
+
+#: commonfiles/templates/index.html:52
+msgid "MY"
+msgstr ""
+
+#: commonfiles/templates/index.html:55
+msgid "Nie trzymamy się utartych schematów"
+msgstr ""
+
+#: commonfiles/templates/index.html:56
+msgid "Do każdego projektu podchodzimy indywidualnie"
+msgstr ""
+
+#: commonfiles/templates/index.html:57
+msgid "Stosujemy niestandardowe materiały"
+msgstr ""
+
+#: commonfiles/templates/index.html:58
+msgid "Stal, mosiądz, solid surface, kompozyty, drewno"
+msgstr ""
+
+#: commonfiles/templates/index.html:59
+msgid "Przywiązujemy wagę do detalu"
+msgstr ""
+
+#: commonfiles/templates/index.html:60
+msgid "Każdy milimetr ma znaczenie"
+msgstr ""
+
+#: commonfiles/templates/index.html:61
+msgid "Lubimy wyzwania"
+msgstr ""
+
+#: commonfiles/templates/index.html:62
+msgid "\"Niemożliwe\" dla nas jest tylko trudne"
+msgstr ""
+
+#: commonfiles/templates/index.html:71
+msgid "ZREALIZOWANE"
+msgstr ""
+
+#: commonfiles/templates/index.html:71
+msgid "PROJEKTY"
+msgstr ""
+
+#: commonfiles/templates/index.html:91
+msgid "NASZ"
+msgstr ""
+
+#: commonfiles/templates/index.html:91
+msgid "ZESPÓŁ"
+msgstr ""
+
+#: commonfiles/templates/index.html:92
+msgid ""
+"Grupa przyjaciół mieszkających razem w Warszawie. Fascynuje nas prostota "
+"duńskiego designu. Zaczęliśmy od wspólnego dłubania w garażu. Potem "
+"zrealizowane pierwsze projekty."
+msgstr ""

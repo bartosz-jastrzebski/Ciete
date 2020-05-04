@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load i18n %}
 {% load static %}
 <html lang="en" dir="ltr">
   <head>
@@ -27,10 +28,10 @@
         </div>
 
         <div class="navbar-menu">
-          <div class="navbar-menu__item" ><a href="" id="offer-link">OFERTA</a></div>
-          <div class="navbar-menu__item" ><a href="" id="portfolio-link">PORTFOLIO</a></div>
-          <div class="navbar-menu__item" ><a href="" id="team-link">O NAS</a></div>
-          <div class="navbar-menu__item" ><a href="" id="contact-link">KONTAKT</a></div>
+          <div class="navbar-menu__item" ><a href="" id="offer-link">{% trans 'OFERTA' %}</a></div>
+          <div class="navbar-menu__item" ><a href="" id="portfolio-link">{% trans 'PORTFOLIO' %}</a></div>
+          <div class="navbar-menu__item" ><a href="" id="team-link">{% trans 'O NAS' %}</a></div>
+          <div class="navbar-menu__item" ><a href="" id="contact-link">{% trans 'KONTAKT' %}</a></div>
         </div>
       </nav>
 
@@ -82,7 +83,7 @@
             <div class="contact__item">
               <i class="material-icons">local_phone</i>
               <div class="contact__text">
-                <strong class="contact__text--title">Telefon:</strong>
+                <strong class="contact__text--title">{% trans 'Telefon' %}:</strong>
                 <div class="contact__text--content">
                   <p>+48 692 291 001</p>
                 </div>
@@ -92,7 +93,7 @@
             <div class="contact__item">
               <i class="material-icons">email</i>
               <div class="contact__text">
-                <strong class="contact__text--title">Email:</strong>
+                <strong class="contact__text--title">{% trans 'Email' %}:</strong>
                 <div class="contact__text--content">
                   <p>info@ciete.eu</p>
                 </div>
@@ -103,12 +104,12 @@
 
         <div class="wrapper__item--form">
           <div class="sent">
-            <h1>Dziękujemy za wiadomość!</h1>
-            <h3>Wkrótce odezwiemy się do Ciebie.</h3>
+            <h1>{% trans 'Dziękujemy za wiadomość' %}!</h1>
+            <h3>{% trans 'Wkrótce odezwiemy się do Ciebie' %}.</h3>
           </div>
           <div class="unsent">
-            <h1>Ups! Coś poszło nie tak</h1>
-            <h3>Odśwież stronę i spróbuj ponownie.</h3>
+            <h1>{% trans 'Ups! Coś poszło nie tak' %}</h1>
+            <h3>{% trans 'Odśwież stronę i spróbuj ponownie' %}.</h3>
           </div>
           <div class="form-wrap">
             <div class="top"></div>
@@ -116,7 +117,7 @@
             <div class="left"></div>
             <div class="right"></div>
             <form action="." method="post" id="contact-form">
-              <h2>Napisz do nas:</h2>
+              <h2>{% trans 'Napisz do nas' %}:</h2>
               {{ form.name.errors }}
               {{ form.name }}
               {{ form.email.errors }}
