@@ -28,7 +28,7 @@ with open(os.path.join(BASE_DIR, 'secret.txt'), 'r') as f:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['ciete.usermd.net', 'localhost']
+ALLOWED_HOSTS = ['ciete.usermd.net', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -163,8 +163,8 @@ else:
 
 # DEPLOY
 
-if not DEBUG:
-    X_FRAME_OPTIONS = 'DENY'
+if DEBUG == False:
+    X_FRAME_OPTIONS = 'SAMEORIGIN'
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SECURE_SSL_REDIRECT = True

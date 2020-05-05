@@ -7,7 +7,7 @@ function Contact () {
         var formData = new FormData(document.querySelector('form'))
         event.preventDefault()
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", '/send_contact/', true);
+        xhr.open("POST", '/pl/send_contact/', true);
         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         xhr.setRequestHeader("X-CSRFToken", document.querySelector("[name=csrfmiddlewaretoken]").value);
         xhr.responseType = 'json';

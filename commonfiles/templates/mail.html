@@ -1,18 +1,18 @@
-
+{% load i18n %}
 <div style="margin-left:7%; margin-right:7%;border-left:1px solid;border-right:1px solid;padding:30px;">
     <img src="cid:logo" style="display:block;margin-left:auto;margin-right:auto">
 
-    <h2 style="text-align:center; color:black;">Dziękujemy!</h2>
+    <h2 style="text-align:center; color:black;">{% trans 'Dziękujemy' %}!</h2>
     <br>
 
-    <p style="text-align:center; color:black;">Witaj {{ name }}</p> 
-    <p style="text-align:center; color:black;">Dostaliśmy Twoją wiadomość, wkrótce odezwiemy się do Ciebie</p>
+    <p style="text-align:center; color:black;">{% trans 'Witaj' %} {{ name }}</p> 
+    <p style="text-align:center; color:black;">{% trans 'Dostaliśmy Twoją wiadomość, wkrótce odezwiemy się do Ciebie' %}</p>
     <br>
-    <h4 style="text-align:center; color:black;">Pozdrawiamy!</h4>
-    <h4 style="text-align:center; color:black;">Zespół Cięte</h4>
+    <h4 style="text-align:center; color:black;">{% trans 'Pozdrawiamy' %}!</h4>
+    <h4 style="text-align:center; color:black;">{% trans 'Zespół Cięte' %}</h4>
 
 
     <p style="color:grey">ciete.eu</p>
-    <p style="color:grey">Tel: +48 692 291 001</p>
-    <p style="color:grey">Email: info@ciete.eu</p>
+    <p style="color:grey">{% trans 'Tel' %}: +48 692 291 001</p>
+    <p style="color:grey">{% trans 'Email' %}: info@ciete.eu</p>
 </div>

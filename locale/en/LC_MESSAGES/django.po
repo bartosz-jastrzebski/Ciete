@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-04 22:15+0000\n"
+"POT-Creation-Date: 2020-05-05 10:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,47 +42,51 @@ msgstr ""
 msgid "duński"
 msgstr ""
 
-#: commonfiles/templates/base.html:31
+#: ciete/views.py:47
+msgid "Dziękujemy za wiadomość "
+msgstr ""
+
+#: commonfiles/templates/base.html:29
 msgid "OFERTA"
 msgstr ""
 
-#: commonfiles/templates/base.html:32
+#: commonfiles/templates/base.html:30
 msgid "PORTFOLIO"
 msgstr ""
 
-#: commonfiles/templates/base.html:33
+#: commonfiles/templates/base.html:31
 msgid "O NAS"
 msgstr ""
 
-#: commonfiles/templates/base.html:34
+#: commonfiles/templates/base.html:32
 msgid "KONTAKT"
 msgstr ""
 
-#: commonfiles/templates/base.html:86
+#: commonfiles/templates/base.html:84
 msgid "Telefon"
 msgstr ""
 
-#: commonfiles/templates/base.html:96
+#: commonfiles/templates/base.html:94 commonfiles/templates/mail.html:17
 msgid "Email"
 msgstr ""
 
-#: commonfiles/templates/base.html:107
+#: commonfiles/templates/base.html:105
 msgid "Dziękujemy za wiadomość"
 msgstr ""
 
-#: commonfiles/templates/base.html:108
+#: commonfiles/templates/base.html:106
 msgid "Wkrótce odezwiemy się do Ciebie"
 msgstr ""
 
-#: commonfiles/templates/base.html:111
+#: commonfiles/templates/base.html:109
 msgid "Ups! Coś poszło nie tak"
 msgstr ""
 
-#: commonfiles/templates/base.html:112
+#: commonfiles/templates/base.html:110
 msgid "Odśwież stronę i spróbuj ponownie"
 msgstr ""
 
-#: commonfiles/templates/base.html:120
+#: commonfiles/templates/base.html:118
 msgid "Napisz do nas"
 msgstr ""
 
@@ -199,4 +203,28 @@ msgid ""
 "Grupa przyjaciół mieszkających razem w Warszawie. Fascynuje nas prostota "
 "duńskiego designu. Zaczęliśmy od wspólnego dłubania w garażu. Potem "
 "zrealizowane pierwsze projekty."
+msgstr ""
+
+#: commonfiles/templates/mail.html:5
+msgid "Dziękujemy"
+msgstr ""
+
+#: commonfiles/templates/mail.html:8
+msgid "Witaj"
+msgstr ""
+
+#: commonfiles/templates/mail.html:9
+msgid "Dostaliśmy Twoją wiadomość, wkrótce odezwiemy się do Ciebie"
+msgstr ""
+
+#: commonfiles/templates/mail.html:11
+msgid "Pozdrawiamy"
+msgstr ""
+
+#: commonfiles/templates/mail.html:12
+msgid "Zespół Cięte"
+msgstr ""
+
+#: commonfiles/templates/mail.html:16
+msgid "Tel"
 msgstr ""
