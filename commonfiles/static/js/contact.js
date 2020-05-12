@@ -3,11 +3,13 @@ function Contact () {
     var sent = document.querySelector('.wrapper__item--form .sent')
     var envelope = document.querySelector('.form-wrap')
 
+    var newUrl = document.URL + 'send_contact/'
+
     contactForm.onsubmit = function(event) {
         var formData = new FormData(document.querySelector('form'))
         event.preventDefault()
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", '/pl/send_contact/', true);
+        xhr.open("POST", newUrl, true);
         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         xhr.setRequestHeader("X-CSRFToken", document.querySelector("[name=csrfmiddlewaretoken]").value);
         xhr.responseType = 'json';

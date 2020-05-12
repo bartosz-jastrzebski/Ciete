@@ -110,12 +110,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'pl'
+LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
-    ('pl', _('polski')),
-    ('en', _('angielski')),
-    ('dk', _('duński'))
+    ('pl', _('polish')),
+    ('en', _('english')),
+    ('dk', _('danish'))
     ]
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
@@ -140,7 +140,8 @@ STATIC_ROOT = PUBLIC_DIR
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PUBLIC_DIR, 'media/')
 
-
+# Rosetta
+ROSETTA_SHOW_AT_ADMIN_PANEL = True
 
 # Email
 
