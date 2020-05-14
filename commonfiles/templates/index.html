@@ -21,7 +21,7 @@
 
       <div class="block__content">
         <div class="block__content--about">
-          <img src="{% static 'images/drawn.png' %}" alt="">
+          <img class="about-image"src="{% static 'images/drawn.png' %}" alt="">
           <!-- <div class="content-item">
            
             <h2>{% trans 'Doradztwo' %}</h2>
@@ -87,9 +87,9 @@
               <div class="block__content--gallery">
                 {% with gallery.get_first as photos  %}
                   {% for photo in photos %}
-                   {% thumbnail  photo.image "300" as img %}
+                   {% thumbnail  photo.image "400" as img %}
                     <div class="flex-item">
-                      <div class="gallery-container" data-title="{{ gallery.title }}">
+                      <div class="gallery-container {{ forloop.counter }}" data-title="{{ gallery.title }}">
                         <div class="gallery-overlay"></div>
                         <img src="{{ img.url }}" alt="" style="display:inline-block">
                       </div>
@@ -100,7 +100,7 @@
               </div>
             {% endfor %}
         </div>
-        
+
       </div>
 </section>
 

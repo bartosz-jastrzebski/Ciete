@@ -1,5 +1,6 @@
+function Main () {
 
-
+    
 var scrollIds = ['home', 'offer', 'portfolio', 'team', 'contact' ]
 
 var overlay = document.getElementsByClassName('overlay')[0]
@@ -61,7 +62,7 @@ scrollIds.forEach(scrollEvent)
 // console.log('navbar: ' + navbarHeight);       
 // console.log('image: ' + imgHomeHeight); 
 
-function Main () {
+
 
 
 if (window.outerWidth > 1060) {

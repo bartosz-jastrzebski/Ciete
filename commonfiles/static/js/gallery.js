@@ -1,3 +1,5 @@
+function Gallery () {
+
 var galleryItems = Array.from(document.getElementsByClassName('gallery-container'))
 var gallery = document.getElementById('portfolio')
 galleryItems.forEach(ShowItems);
@@ -88,4 +90,6 @@ function ShowItems(obj) {
             document.body.style.overflow = 'auto';
         }
     }
+}
+
 }
