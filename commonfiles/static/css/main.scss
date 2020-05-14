@@ -13,7 +13,7 @@ $main-font-color: #545454; //797979
 $main-font-family: 'Nunito Sans', sans-serif;
 $main-font-size: 16px;
 $main-font-weight: 400;
-$title-font-size: 18px;
+$title-font-size: 16px;
 $title-font-weight: 600;
 $title-font-color: #2a3d45;  //#16293b;
 $navbar-font-family: 'Nunito Sans', sans-serif;
@@ -97,13 +97,6 @@ img {
       font-weight: 600;
     }
   }
-
-  // div .navbar-logo__headers {
-  //   margin-top: 0px;
-  //   h6 {
-  //     padding: 0px;
-  //   }
-  // }
 }
 
 .bordered {
@@ -182,6 +175,7 @@ img {
   }
 }
 
+
 // BLOCK ELEMENT
 
 .block {
@@ -203,7 +197,7 @@ img {
     }
 
     strong {
-      font-weight: $title-font-weight;
+      font-weight: 900;
       font-size: $title-font-size;
       color: $title-font-color;
     }
@@ -224,6 +218,17 @@ img {
 }
 
  // ABOUT SECTION
+
+
+ #offer {
+   display:-webkit-box;
+   ul {
+    list-style-type: none;
+    li {
+      margin: 10px 0px 10px 0px;
+    }
+   } 
+ }
 
 .block__content--about {
   height: 100%;
@@ -274,16 +279,17 @@ img {
   overflow:hidden;
   margin:10px;
   width:fit-content;
-  
+  letter-spacing: 3px;
   h6 {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: $title-font-weight;
+    
     margin: 15px 0 15px 0;
   }
 
   p {
     font-size: $main-font-size;
-    padding-left: 25px;
+    padding-left: 80px;
   }
 }
 
@@ -406,8 +412,18 @@ figure {
 }
 
 // TEAM SECTION
+#team {
+  .block__text {
+    margin-bottom: 10px;
+  }
+
+  .person {
+    margin-bottom: 10px;
+  }
+}
 
 .block__content--team {
+  margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -424,6 +440,12 @@ figure {
       }
       > * {
         margin: 10px;
+      }
+      .signature {
+        height: 70px;
+        width: auto;
+        max-width: 150px;
+        margin: 0px;
       }
   }
   .list-inline {
@@ -575,7 +597,7 @@ figure {
    form {  
       margin: auto;
       display: grid;
-      width: 23vw;; 
+      width: 25vw;; 
    }
    form > input, textarea, button {
     //  display: block;
@@ -588,6 +610,7 @@ figure {
      color: $background-color;
    }
    form input {
+     margin-bottom: 10px;
      height: 40px;
      padding-left: 10px;
      -webkit-appearance: none; 

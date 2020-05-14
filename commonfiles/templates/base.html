@@ -8,7 +8,8 @@
     <link rel="icon" type="image/png" href="{% static 'images/logo-small-brown.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Matomo -->
@@ -33,10 +34,10 @@
 
         <div class="navbar-menu">
           
-          <div class="navbar-menu__item" ><a href="" id="offer-link">{% trans 'OFERTA' %}</a></div>
-          <div class="navbar-menu__item" ><a href="" id="portfolio-link">{% trans 'PORTFOLIO' %}</a></div>
-          <div class="navbar-menu__item" ><a href="" id="team-link">{% trans 'O NAS' %}</a></div>
-          <div class="navbar-menu__item" ><a href="" id="contact-link">{% trans 'KONTAKT' %}</a></div>
+          <div class="navbar-menu__item" ><a href="" id="offer-link">{% trans 'SERVICES' %}</a></div>
+          <div class="navbar-menu__item" ><a href="" id="portfolio-link">{% trans 'PROJECTS' %}</a></div>
+          <div class="navbar-menu__item" ><a href="" id="team-link">{% trans 'ABOUT' %}</a></div>
+          <div class="navbar-menu__item" ><a href="" id="contact-link">{% trans 'CONTACT' %}</a></div>
         </div>
       </nav>
 
@@ -73,15 +74,15 @@
          
             <div class="contact__item">
               <div class="contact__text">
-                <p id="welcome-message">You are always welcome<br>
-                  to leave us a message</p>
+                <p id="welcome-message">{% trans 'You are always welcome' %}<br>
+                  {% trans 'to leave us message' %}</p>
               </div>
             </div>
 
             <div class="contact__item">
               <img class="contact__icon" src="{% static 'images/phone.png' %}" alt="">
               <div class="contact__text">
-                <strong class="contact__text--title">{% trans 'Telefon' %}:</strong>
+                <strong class="contact__text--title">{% trans 'Telephone' %}:</strong>
                 <div class="contact__text--content">
                   <p>+48 692 291 001</p>
                 </div>
@@ -102,12 +103,12 @@
 
         <div class="wrapper__item--form">
           <div class="sent">
-            <h1>{% trans 'Dziękujemy za wiadomość' %}!</h1>
-            <h3>{% trans 'Wkrótce odezwiemy się do Ciebie' %}.</h3>
+            <h1>{% trans 'Thanks for your message' %}!</h1>
+            <h3>{% trans "We'll get in touch soon" %}.</h3>
           </div>
           <div class="unsent">
-            <h1>{% trans 'Ups! Coś poszło nie tak' %}</h1>
-            <h3>{% trans 'Odśwież stronę i spróbuj ponownie' %}.</h3>
+            <h1>{% trans 'Oops! Something went wrong' %}</h1>
+            <h3>{% trans 'Refresh and try again' %}.</h3>
           </div>
           <div class="form-wrap">
             <div class="top"></div>
@@ -115,7 +116,7 @@
             <div class="left"></div>
             <div class="right"></div>
             <form action="." method="post" id="contact-form">
-              <h2>{% trans 'NAPISZ DO NAS' %}</h2>
+              <h2>{% trans 'CONTACT US' %}</h2>
               {{ form.name.errors }}
               {{ form.name }}
               {{ form.email.errors }}

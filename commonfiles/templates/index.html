@@ -5,8 +5,17 @@
 {% block content %}
  <section id="offer" class="block">
      <div class="block__header">
-        <h1>{% trans 'CO' %} <strong>{% trans 'ROBIMY' %}</strong>?</h1>
-        <p class="block__text">{% trans 'Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. Kompleksowo.' %}</p>
+        <h1>{% trans 'WHAT WE' %} <strong>{% trans 'DO' %}</strong>?</h1>
+        <p class="block__text">{% trans 'CIĘTE realize personalized design solutions. We craft and montage tailored indoor & outdoor furniture. From A to Z.' %}</p>
+        <ul class="offer__list">
+          <li>-  {% trans 'direct on-site measurement' %}</li>
+          <li>-  {% trans 'concept / detailed drawings' %}</li>
+          <li>-  {% trans 'construction advices' %}</li>
+          <li>-  {% trans '3d models / visualizations' %}</li>
+          <li>-  {% trans 'cost estimates' %}</li>
+          <li>-  {% trans 'comprehensive projects implementation' %}</li>
+          <li>-  {% trans 'transport & montage' %}</li>
+        </ul>
       </div>
 
       <div class="block__content">
@@ -51,17 +60,17 @@
       </div>
 
       <div class="block__header">
-        <h1>{% trans 'DLACZEGO' %} <strong>{% trans 'MY' %}</strong>?</h1>
+        <h1>{% trans 'WHY' %} <strong>{% trans 'US' %}</strong>?</h1>
         <!-- <p class="block__text">Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. Kompleksowo.</p> -->
         <div class="block__text--choose">
-          <h6 class="moved">{% trans 'Nie trzymamy się utartych schematów' %}.</h6>
-          <p  class="moved">{% trans 'Do każdego projektu podchodzimy indywidualnie' %}.</p>
-          <h6 class="moved">{% trans 'Stosujemy niestandardowe materiały' %}.</h6>
-          <p  class="moved">{% trans 'Stal, mosiądz, solid surface, kompozyty, drewno' %}.</p>
-          <h6 class="moved">{% trans 'Przywiązujemy wagę do detalu' %}.</h6>
-          <p  class="moved">{% trans 'Każdy milimetr ma znaczenie' %}.</p>
-          <h6 class="moved">{% trans 'Lubimy wyzwania' %}.</h6>
-          <p  class="moved">{% trans '"Niemożliwe" dla nas jest tylko trudne' %}.</p>
+          <h6 class="moved">{% trans 'we go beyond known schemes and' %}</h6>
+          <p  class="moved">{% trans 'we treat each project individually' %}</p>
+          <h6 class="moved">{% trans 'we pay attention to details' %}</h6>
+          <p  class="moved">{% trans 'each milimmeter counts' %}</p>
+          <h6 class="moved">{% trans 'we use vast variety of materials' %}</h6>
+          <p  class="moved">{% trans 'steel. wood. composites. corain' %}</p>
+          <h6 class="moved">{% trans 'we like challenges' %}</h6>
+          <p  class="moved">{% trans 'impossible is just hard' %}</p>
         </div>
       </div>
 
@@ -70,7 +79,7 @@
 <section id="portfolio" class="block" style="display: none;">
       {% get_main_page_galleries as galleries %}
       <div class="block__header">
-        <h1>{% trans 'ZREALIZOWANE' %} <strong>{% trans 'PROJEKTY' %}</strong></h1>
+        <h1>{% trans 'REALIZED' %} <strong>{% trans 'PROJECTS' %}</strong></h1>
         <div class="block__content">
           <div class="block__content--gallery">
 
@@ -90,8 +99,29 @@
 
 <section id="team" class="block" style="display: none;">
       <div class="block__header">
-        <h1>{% trans 'NASZ' %} <strong>{% trans 'ZESPÓŁ' %}</strong></h1>
-        <p class="block__text">{% trans 'Grupa przyjaciół mieszkających razem w Warszawie. Fascynuje nas prostota duńskiego designu. Zaczęliśmy od wspólnego dłubania w garażu. Potem zrealizowane pierwsze projekty.' %}</p>
+        <h1>{% trans 'OUR' %} <strong>{% trans 'TEAM' %}</strong></h1>
+        <p class="block__text">{% trans 'Two enginners / constructors and one architect. Close friends and makers. Share various areas of expertise' %}</p>
+
+        <div class="person">
+          <strong>Natalia</strong>
+          <p>{% trans 'design concepts' %}</p>
+          <p>{% trans 'color palettes' %}</p>
+          <p>{% trans 'materials combinations' %}</p>
+        </div>
+
+        <div class="person">
+          <strong>Tomasz</strong>
+          <p>{% trans 'laser cutters and CNC machines' %}</p>
+          <p>{% trans 'materials/construction' %}</p>
+          <p>{% trans 'logistics' %}</p>
+        </div>
+
+        <div class="person">
+          <strong>Krzysztof</strong>
+          <p>{% trans 'detailing' %}</p>
+          <p>{% trans 'quality control' %}</p>
+        </div>
+
       </div>
 
       <div class="block__content">
@@ -103,6 +133,7 @@
 
             <div class="separator"></div>
             <h5>+48 692 291 001</h5>
+            <img class="signature" src="{% static 'images/team1-bottom.png' %}" alt="">
             <!-- <h5>natalia@ciete.eu</h5>
             <div class="separator"></div>
             <ul class="list-inline">
@@ -119,6 +150,7 @@
 
             <div class="separator"></div>
             <h5>+48 721 323 373</h5>
+            <img class="signature" src="{% static 'images/team2-bottom.png' %}" alt="">
           </div>
 
           <div class="team-member">
@@ -128,6 +160,7 @@
 
             <div class="separator"></div>
             <h5>+48 721 721 137</h5>
+            <img class="signature" src="{% static 'images/team3-bottom.png' %}" alt="">
           </div>
         </div>
       </div>

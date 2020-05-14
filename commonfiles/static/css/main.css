@@ -197,7 +197,7 @@ img {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 500px;
           flex: 1 1 500px;
-  font-size: 18px;
+  font-size: 16px;
   margin: 30px 0 30px 0;
   color: #545454;
 }
@@ -209,8 +209,8 @@ img {
 }
 
 .block__header strong {
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 900;
+  font-size: 16px;
   color: #2a3d45;
 }
 
@@ -227,6 +227,18 @@ img {
       -ms-flex: 1 1 500px;
           flex: 1 1 500px;
   margin: 30px 15px 30px 15px;
+}
+
+#offer {
+  display: -webkit-box;
+}
+
+#offer ul {
+  list-style-type: none;
+}
+
+#offer ul li {
+  margin: 10px 0px 10px 0px;
 }
 
 .block__content--about {
@@ -251,17 +263,18 @@ img {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  letter-spacing: 3px;
 }
 
 .block__text--choose h6 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   margin: 15px 0 15px 0;
 }
 
 .block__text--choose p {
   font-size: 16px;
-  padding-left: 25px;
+  padding-left: 80px;
 }
 
 .block__content .translated {
@@ -418,7 +431,16 @@ figure {
   min-height: 4vh;
 }
 
+#team .block__text {
+  margin-bottom: 10px;
+}
+
+#team .person {
+  margin-bottom: 10px;
+}
+
 .block__content--team {
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -445,6 +467,13 @@ figure {
 
 .block__content--team .team-member > * {
   margin: 10px;
+}
+
+.block__content--team .team-member .signature {
+  height: 70px;
+  width: auto;
+  max-width: 150px;
+  margin: 0px;
 }
 
 .block__content--team .list-inline {
@@ -639,7 +668,7 @@ figure {
   margin: auto;
   display: -ms-grid;
   display: grid;
-  width: 23vw;
+  width: 25vw;
 }
 
 .wrapper form > input, .wrapper textarea, .wrapper button {
@@ -653,6 +682,7 @@ figure {
 }
 
 .wrapper form input {
+  margin-bottom: 10px;
   height: 40px;
   padding-left: 10px;
   -webkit-appearance: none;
