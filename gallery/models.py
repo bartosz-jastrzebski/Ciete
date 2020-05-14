@@ -46,6 +46,9 @@ class Gallery(models.Model):
             img = img.resize(size)
             img.thumbnail(size, 3)
             img.save(path, 'PNG')
+            
+    def get_first(self):
+        return self.photos.all()[:3]
 
     def __str__(self):
         return self.title

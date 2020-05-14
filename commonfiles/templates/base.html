@@ -60,7 +60,7 @@
     {% endblock %}
 
 
-    <footer id="contact" style="display: none;">
+    <footer id="contact">
 
       <div class="wrapper">
 
@@ -131,9 +131,10 @@
       </div>
     </footer>
 
+    {% get_current_language as lang_code %}
     <div class="languages">
-      <a href="{% url 'construction' %}">EN</a>
-      <a href="#" class="active">PL</a>
+      <a href="/en/" class="{% if lang_code == 'en' %}active{% endif %}">EN</a>
+      <a href="/pl/" class="{% if lang_code == 'pl' %}active{% endif %}">PL</a>
     </div>
 
     <script src="{% static 'js/main.js' %}"></script>

@@ -2,6 +2,7 @@
 {% load gallery_tags %}
 {% load i18n %}
 {% load static %}
+{% load thumbnail %}
 {% block content %}
  <section id="offer" class="block">
      <div class="block__header">
@@ -76,28 +77,34 @@
 
 </section>
 
-<section id="portfolio" class="block" style="display: none;">
+<section id="portfolio" class="block">
       {% get_main_page_galleries as galleries %}
       <div class="block__header">
         <h1>{% trans 'REALIZED' %} <strong>{% trans 'PROJECTS' %}</strong></h1>
-        <div class="block__content">
-          <div class="block__content--gallery">
 
+        <div class="block__content no-margin">
             {% for gallery in galleries %}
-            <div class="flex-item">
-              <div class="gallery-container" data-title="{{ gallery.title }}">
-                <div class="gallery-overlay"></div>
-                <img src="{{ gallery.thumbnail.url }}" alt="">
+              <div class="block__content--gallery">
+                {% with gallery.get_first as photos  %}
+                  {% for photo in photos %}
+                   {% thumbnail  photo.image "300" as img %}
+                    <div class="flex-item">
+                      <div class="gallery-container" data-title="{{ gallery.title }}">
+                        <div class="gallery-overlay"></div>
+                        <img src="{{ img.url }}" alt="" style="display:inline-block">
+                      </div>
+                    </div>
+                    {% endthumbnail %}
+                  {% endfor %}
+                {% endwith %}
               </div>
-            </div>
             {% endfor %}
-
-          </div>
         </div>
+        
       </div>
 </section>
 
-<section id="team" class="block" style="display: none;">
+<section id="team" class="block">
       <div class="block__header">
         <h1>{% trans 'OUR' %} <strong>{% trans 'TEAM' %}</strong></h1>
         <p class="block__text">{% trans 'Two enginners / constructors and one architect. Close friends and makers. Share various areas of expertise' %}</p>
@@ -128,26 +135,15 @@
         <div class="block__content--team">
           <div class="team-member">
             <img src="{% static 'images/team1.jpg' %}" alt="" class="img-circle">
-
             <h4 class="m-top-20">Natalia <strong>Budnik</strong></h4>
-
             <div class="separator"></div>
             <h5>+48 692 291 001</h5>
             <img class="signature" src="{% static 'images/team1-bottom.png' %}" alt="">
-            <!-- <h5>natalia@ciete.eu</h5>
-            <div class="separator"></div>
-            <ul class="list-inline">
-                <li><a href=""><img src="images/icons-facebook-100.png" alt=""></a></li>
-                <li><a href=""><img src="images/icons-instagram-old-100.png" alt=""></a></li>
-                <li><a href=""><img src="images/icons-linkedin-100.png" alt=""></a></li>
-            </ul> -->
           </div>
 
           <div class="team-member">
             <img src="{% static 'images/team2.jpg' %}" alt="" class="img-circle">
-
             <h4 class="m-top-20">Tomasz <strong>Budnik</strong></h4>
-
             <div class="separator"></div>
             <h5>+48 721 323 373</h5>
             <img class="signature" src="{% static 'images/team2-bottom.png' %}" alt="">
@@ -155,9 +151,7 @@
 
           <div class="team-member">
             <img src="{% static 'images/team3.jpg' %}" alt="" class="img-circle">
-
             <h4 class="m-top-20">Krzysztof <strong>Kita</strong></h4>
-
             <div class="separator"></div>
             <h5>+48 721 721 137</h5>
             <img class="signature" src="{% static 'images/team3-bottom.png' %}" alt="">

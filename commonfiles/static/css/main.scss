@@ -23,9 +23,9 @@ $text-translate: 400px;
 
 
 // RESETS
-* {
-  border: 1px solid black;
-}
+// * {
+//   border: 1px solid black;
+// }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -177,9 +177,11 @@ img {
 
 
 // BLOCK ELEMENT
-
+.no-margin {
+  margin: 0px !important;
+}
 .block {
-  padding: 80px 20px 80px 20px;
+  padding: 80px 10px 20px 10px;
   margin: 0 7vw 0 7vw;
   display: flex;
   flex-wrap: wrap;
@@ -283,7 +285,7 @@ img {
   h6 {
     font-size: 1rem;
     font-weight: $title-font-weight;
-    
+    letter-spacing: 3px;
     margin: 15px 0 15px 0;
   }
 
@@ -301,6 +303,7 @@ img {
 // GALLERY SECTION
 
 .block__content--gallery {
+  margin: 30px 0 30px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -309,9 +312,7 @@ img {
     perspective-origin: 50% 50%;
     perspective: 200px;
     overflow: hidden;
-    flex-basis: 32%;
-    margin: 4px;
-    // border-radius: 2%;
+    flex-basis: 33%;
     height: fit-content;
 
     img {
@@ -605,12 +606,12 @@ figure {
      background: $form-background;    
      border: 2px solid;
      margin:2px;
+     margin-bottom: 10px;
      border-color: $form-border;
      font-family: $main-font-family;
      color: $background-color;
    }
    form input {
-     margin-bottom: 10px;
      height: 40px;
      padding-left: 10px;
      -webkit-appearance: none; 

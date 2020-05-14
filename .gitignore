@@ -4,3 +4,4 @@ __pycache__
 secret.txt
 email_data.txt
 commonfiles/static/admin
+public/
