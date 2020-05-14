@@ -110,7 +110,7 @@ img {
   font-family: $navbar-font-family;
   font-weight: $navbar-font-weight;
   letter-spacing: 3px;
-  padding-top: 1vh;
+  padding-top: 2vh;
   position: fixed;
   width: 100%;
   display: flex;
@@ -323,7 +323,7 @@ img {
       transition: transform 1s ease;
       cursor: pointer;
       &:hover {
-        transform: translateZ(30px)
+        transform: translateZ(15px)
       }
     }
     .gallery-overlay {
