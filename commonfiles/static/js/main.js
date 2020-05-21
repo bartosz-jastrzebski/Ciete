@@ -24,13 +24,11 @@ var aboutHeight = this.getComputedStyle(sectionAbout)['height']
 aboutHeight = Number(aboutHeight.replace('px', ''))
 
 var portfolio = document.getElementById('portfolio')
-var portfolioPosition = portfolio.getBoundingClientRect()['height']
-var team = document.getElementById('team')
-var contact = document.getElementById('contact')
+// var portfolioPosition = portfolio.getBoundingClientRect()['height']
+// var team = document.getElementById('team')
+// var contact = document.getElementById('contact')
 
-var aboutText = sectionAbout.getElementsByClassName('block__text--choose')[0].children
-
-var moved = Array.from(document.getElementsByClassName('moved'))
+// var aboutText = sectionAbout.getElementsByClassName('block__text--choose')[0].children
 
 var position = 0;
 var images = sectionAbout.getElementsByTagName('img');
@@ -42,8 +40,6 @@ var animationCountdown = 0
 function scrollEvent (id) {
     let obj = document.getElementById(`${id}-link`)
     obj.addEventListener('click', function(event) {
-        // moved.forEach(function(e){e.classList.remove('moved')})
-        // counter = 1200
         event.preventDefault()
         document.getElementById(id).scrollIntoView({
             behavior: 'smooth'
@@ -51,27 +47,16 @@ function scrollEvent (id) {
     })
 }
 
-
 scrollIds.forEach(scrollEvent)
-
-// console.log('overlay: ' + overlayHeight);
-// console.log('navbar: ' + navbarHeight);       
-// console.log('image: ' + imgHomeHeight); 
-
 
 if (window.outerWidth > 1060) {
     document.onscroll = ScrollAnimate
-} //else {
-moved.forEach(function(e){e.classList.remove('moved')})
-portfolio.style.display = 'flex';
-team.style.display = 'flex';
-contact.style.display = 'block';
+} 
+
 images[2].setAttribute('src', '/static/images/choose3.jpg')
 images[3].setAttribute('src', '/static/images/choose4.jpg')
 images[4].setAttribute('src', '/static/images/choose5.jpg')
 animate();
-// }
-
 
 document.body.onresize = function() {
     this.imgHome = document.getElementById('img-home')
@@ -81,20 +66,16 @@ document.body.onresize = function() {
 }
 
 function ScrollAnimate() {
-    // var overlay = document.getElementsByClassName('overlay')[0]
-    // var overlayHeight = window.getComputedStyle(overlay)['height']
-    // overlayHeight = Number(overlayHeight.replace('px', ''))   
+
     let offset = window.pageYOffset;
     console.log('Offset');
     console.log(offset);
     console.log('Overlay');
     console.log(overlayHeight)
     if (offset < overlayHeight) {
-        let overlayValue = overlayHeight-offset;
 
-        if (overlayValue <= imgHomeHeight) {
-            overlay.style.height = `${overlayValue}px`;
-        }
+        let overlayValue = overlayHeight-offset;
+        overlay.style.height = `${overlayValue}px`;
 
         if (offset > overlayValue) {
             navbar.classList.add('white')
@@ -102,13 +83,11 @@ function ScrollAnimate() {
             navbar.classList.remove('white')
         }
 
-
-
-    if (offset + navbarHeight - 10 >= imgHomeHeight) {
-        navbar.classList.add('bordered')
-    } else {
-        navbar.classList.remove('bordered')
-    }
+        if (offset + navbarHeight - 10 >= imgHomeHeight) {
+            navbar.classList.add('bordered')
+        } else {
+            navbar.classList.remove('bordered')
+        }
  
     }
 

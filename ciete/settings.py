@@ -145,7 +145,7 @@ ROSETTA_SHOW_AT_ADMIN_PANEL = True
 
 # Email
 
-if DEBUG:
+if not DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     with open('email_data.txt', 'r') as file:
@@ -159,16 +159,16 @@ else:
     EMAIL_HOST_PASSWORD = host_password
     EMAIL_PORT = port
     EMAIL_USE_TLS = True
-    EMAIL_USE_SSL = True
+   
 
 
 # DEPLOY
 
-if DEBUG == False:
-    X_FRAME_OPTIONS = 'SAMEORIGIN'
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
+# if DEBUG == False:
+#     X_FRAME_OPTIONS = 'SAMEORIGIN'
+#     SESSION_COOKIE_SECURE = True
+#     CSRF_COOKIE_SECURE = True
+#     SECURE_SSL_REDIRECT = True
+#     SECURE_BROWSER_XSS_FILTER = True
+#     SECURE_CONTENT_TYPE_NOSNIFF = True
+#     SECURE_CONTENT_TYPE_NOSNIFF = True

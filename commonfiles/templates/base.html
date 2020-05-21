@@ -21,10 +21,6 @@
     <header id="home">
       <nav class="navbar">
         <div class="navbar-logo" id="home-link">
-            <!-- <div class="logo-images">
-              <img class="logo-top" src="{% static 'images/logo-top.png' %}" alt="">
-              <img class="logo-bottom" src="{% static 'images/logo-bottom.png' %}" alt="">            
-            </div> -->
             <div class="navbar-logo__headers">
               <h2>CIĘTE</h2>
               <span>•</span>
@@ -33,7 +29,6 @@
         </div>
 
         <div class="navbar-menu">
-          
           <div class="navbar-menu__item" ><a href="" id="offer-link">{% trans 'SERVICES' %}</a></div>
           <div class="navbar-menu__item" ><a href="" id="portfolio-link">{% trans 'PROJECTS' %}</a></div>
           <div class="navbar-menu__item" ><a href="" id="team-link">{% trans 'ABOUT' %}</a></div>
@@ -41,22 +36,13 @@
         </div>
       </nav>
 
-      <div class="overlay"></div>
-      <img id="img-home" src="{% static 'images/home.jpg' %}" alt="">
+      <div class="overlay-wrapper">
+        <div class="overlay"></div>
+        <img id="img-home" src="{% static 'images/home.jpg' %}" alt="">
+      </div>
     </header>
-    <!-- <script>
-      var overlay = document.getElementsByClassName('overlay')[0]
-      var overlayHeight = this.getComputedStyle(overlay)['height']
-      overlayHeight = Number(overlayHeight.replace('px', ''))
-      console.log(overlayHeight);
-      var imgHome = document.getElementById('img-home')
-      var imgHomeHeight = this.getComputedStyle(imgHome)['height']
-      imgHomeHeight = Number(imgHomeHeight.replace('px', ''))
-      console.log(imgHomeHeight);
-      overlay.style.height = `${imgHomeHeight}px`;
-      console.log(overlay.style.height);
-    </script> -->
 
+    
     {% block content %}
     {% endblock %}
 

@@ -22,36 +22,11 @@
       <div class="block__content">
         <div class="block__content--about">
           <img class="about-image"src="{% static 'images/drawn.png' %}" alt="">
-          <!-- <div class="content-item">
-           
-            <h2>{% trans 'Doradztwo' %}</h2>
-            <p class="content-item--text">{% trans 'Zapewniamy fachową poradę zarówno w kwestii rozplanowania wnętrza jak i stylu.' %}</p>
-          </div>
-
-          <div class="content-item">
-            
-            <h2>{% trans 'Projekt' %}</h2>
-            <p class="content-item--text">{% trans 'Masz pewność, że do Twoich potrzeb podejdziemy indywidualnie.' %}</p>
-          </div>
-
-          <div class="content-item">
-            
-            <h2>{% trans 'Wycena' %}</h2>
-            <p class="content-item--text">{% trans 'Oferujemy elastyczność w kwestii ceny, możesz mieć pewność, że będziesz zadowolony.' %}</p>
-          </div>
-          <div class="content-item">
-            
-            <h2>{% trans 'Realizacja' %}</h2>
-            <p class="content-item--text">{% trans 'Zaczynamy jak tylko projekt zostanie przez Ciebie zatwierdzony.' %}</p>
-          </div> -->
-
         </div>
       </div>
-
  </section>
 
 <section id="about" class="block">
-
       <div class="block__content small-gallery">
         <img src="{% static 'images/choose1.jpg' %}" alt="" class="translated">
         <img src="{% static 'images/choose2.jpg' %}" alt="" class="translated">
@@ -62,19 +37,17 @@
 
       <div class="block__header">
         <h1>{% trans 'WHY' %} <strong>{% trans 'US' %}</strong>?</h1>
-        <!-- <p class="block__text">Projektujemy, tniemy, realizujemy. Meble. Pomożemy dobrać Ci odpowiedni materiał i kolorytykę, wykonamy wizualizacje, rysunki koncepcyjne i techniczne. Wycenimy. Zajmiemy się zamówieniami, realizacją i montażem. Kompleksowo.</p> -->
         <div class="block__text--choose">
-          <h6 class="moved">{% trans 'we go beyond known schemes and' %}</h6>
-          <p  class="moved">{% trans 'we treat each project individually' %}</p>
-          <h6 class="moved">{% trans 'we pay attention to details' %}</h6>
-          <p  class="moved">{% trans 'each milimmeter counts' %}</p>
-          <h6 class="moved">{% trans 'we use vast variety of materials' %}</h6>
-          <p  class="moved">{% trans 'steel. wood. composites. corain' %}</p>
-          <h6 class="moved">{% trans 'we like challenges' %}</h6>
-          <p  class="moved">{% trans 'impossible is just hard' %}</p>
+          <h6>{% trans 'we go beyond known schemes and' %}</h6>
+          <p>{% trans 'we treat each project individually' %}</p>
+          <h6>{% trans 'we pay attention to details' %}</h6>
+          <p>{% trans 'each milimmeter counts' %}</p>
+          <h6>{% trans 'we use vast variety of materials' %}</h6>
+          <p>{% trans 'steel. wood. composites. corain' %}</p>
+          <h6>{% trans 'we like challenges' %}</h6>
+          <p>{% trans 'impossible is just hard' %}</p>
         </div>
       </div>
-
 </section>
 
 <section id="portfolio" class="block">
@@ -87,7 +60,7 @@
               <div class="block__content--gallery">
                 {% with gallery.get_first as photos  %}
                   {% for photo in photos %}
-                   {% thumbnail  photo.image "400" as img %}
+                   {% thumbnail  photo.image "x300" as img %}
                     <div class="flex-item">
                       <div class="gallery-container {{ forloop.counter }}" data-title="{{ gallery.title }}">
                         <div class="gallery-overlay"></div>
@@ -100,7 +73,6 @@
               </div>
             {% endfor %}
         </div>
-
       </div>
 </section>
 

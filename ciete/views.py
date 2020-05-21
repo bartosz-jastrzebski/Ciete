@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_POST, require_GET
 from django.core.mail import send_mail, EmailMultiAlternatives
-from django.utils.translation import gettext_lazy as _
+from django.utils import translation
 from smtplib import SMTPException
 from email.mime.image import MIMEImage
 from django.conf import settings
@@ -33,22 +33,19 @@ def get_gallery_photos(request, title):
 @ajax_required
 @require_POST
 def send_contact_data(request):
-    print('START HERE')
-    print(request.method)
-    print(request)
-    print(request.POST)
-    print('END HERE')
+
     user_name = request.POST['name']
     user_email = request.POST['email']
 
     message = request.POST['message']
     company_subject = 'Cięte - wiadomość od {} '.format(user_name)
 
-    user_subject = _('Dziękujemy za wiadomość ')
+    user_subject = translation.gettext_lazy('Thank you for the message')
     user_message = None
     user_html = loader.render_to_string('mail.html', {'name': user_name})
+ 
     try:
-        # Send message from user 
+        # Send message from user
         notification_mail = EmailMultiAlternatives(
             subject=company_subject,
             from_email=user_email,

@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-14 18:20+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2020-05-20 16:50+0000\n"
+"PO-Revision-Date: 2020-05-20 16:55+0000\n"
+"Last-Translator: b'  <>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
-"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
-"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
 
 #: ciete/forms.py:7
 msgid "name"
@@ -44,9 +43,9 @@ msgstr ""
 msgid "danish"
 msgstr ""
 
-#: ciete/views.py:47
-msgid "Dziękujemy za wiadomość "
-msgstr ""
+#: ciete/views.py:46
+msgid "Thank you for the message"
+msgstr "Dziękujemy za wiadomość"
 
 #: commonfiles/templates/base.html:37
 msgid "SERVICES"
@@ -64,39 +63,39 @@ msgstr ""
 msgid "CONTACT"
 msgstr ""
 
-#: commonfiles/templates/base.html:77
+#: commonfiles/templates/base.html:78
 msgid "You are always welcome"
 msgstr ""
 
-#: commonfiles/templates/base.html:78
+#: commonfiles/templates/base.html:79
 msgid "to leave us message"
 msgstr ""
 
-#: commonfiles/templates/base.html:85
+#: commonfiles/templates/base.html:86
 msgid "Telephone"
 msgstr ""
 
-#: commonfiles/templates/base.html:95 commonfiles/templates/mail.html:17
+#: commonfiles/templates/base.html:96 commonfiles/templates/mail.html:18
 msgid "Email"
 msgstr ""
 
-#: commonfiles/templates/base.html:106
+#: commonfiles/templates/base.html:107
 msgid "Thanks for your message"
 msgstr ""
 
-#: commonfiles/templates/base.html:107
+#: commonfiles/templates/base.html:108
 msgid "We'll get in touch soon"
 msgstr ""
 
-#: commonfiles/templates/base.html:110
+#: commonfiles/templates/base.html:111
 msgid "Oops! Something went wrong"
 msgstr ""
 
-#: commonfiles/templates/base.html:111
+#: commonfiles/templates/base.html:112
 msgid "Refresh and try again"
 msgstr ""
 
-#: commonfiles/templates/base.html:119
+#: commonfiles/templates/base.html:120
 msgid "CONTACT US"
 msgstr ""
 
@@ -269,25 +268,25 @@ msgid "quality control"
 msgstr ""
 
 #: commonfiles/templates/mail.html:5
-msgid "Dziękujemy"
-msgstr ""
-
-#: commonfiles/templates/mail.html:8
-msgid "Witaj"
-msgstr ""
+msgid "Thank you"
+msgstr "Dziękujemy"
 
 #: commonfiles/templates/mail.html:9
-msgid "Dostaliśmy Twoją wiadomość, wkrótce odezwiemy się do Ciebie"
-msgstr ""
+msgid "Hi"
+msgstr "Cześć"
 
-#: commonfiles/templates/mail.html:11
-msgid "Pozdrawiamy"
-msgstr ""
+#: commonfiles/templates/mail.html:10
+msgid "Thank you for your message. We'll get in touch soon."
+msgstr "Dziękujemy za wiadomość. Odezwiemy się wkrótce"
 
 #: commonfiles/templates/mail.html:12
-msgid "Zespół Cięte"
-msgstr ""
+msgid "Kind regards"
+msgstr "Pozdrawiamy"
 
-#: commonfiles/templates/mail.html:16
+#: commonfiles/templates/mail.html:13
+msgid "Cięte Team"
+msgstr "Zespół Cięte"
+
+#: commonfiles/templates/mail.html:17
 msgid "Tel"
-msgstr ""
+msgstr "Tel"
