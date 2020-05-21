@@ -56,6 +56,27 @@ body{
   font-weight: 400;
 }
 
+// PROGRESS BAR
+.progress-bar {
+  border: 3px solid white;
+  border-radius: 20px;
+  position: absolute;
+  width: 50vw;
+  height: 7vh;
+  z-index: 5;
+  top: 40%;
+  left: 25%;
+  .bar {
+    background: $form-background;
+    border-radius: inherit;
+    height: 100%;
+    width: 10%;
+    text-align: center;
+    font-size: 200%;
+    color: white;
+  }
+}
+
 // MAIN
 
 #home {
@@ -177,7 +198,7 @@ img {
   margin: 0px !important;
 }
 .block {
-  padding: 80px 10px 20px 10px;
+  padding: 60px 10px 10px 10px;
   margin: 0 7vw 0 7vw;
   display: flex;
   flex-wrap: wrap;
@@ -221,7 +242,7 @@ img {
  #offer {
    display:-webkit-box;
    .block__content {
-     margin-top: 0px;
+     margin-top: 20px;
    }
    .block__header {
      margin-top: 60px;
@@ -240,36 +261,6 @@ img {
     width: 40vw;
     height: auto;
   }
-  // display: grid;
-  // min-height: 180px;
-  // grid-template-columns: 50% 50%;
-  // grid-template-rows: 50% 50%;
-
-  // .content-item {
-  //   align-self: center;
-  //   justify-self: center;
-  //   margin: 6px;
-  //   text-align: center;
-  //   width: 85%;
-  //   height:100%;
-  //   img {
-  //     width: 65%;
-  //   }
-  //   h2 {
-  //     margin-top: 10px;
-  //     font-size: 20px;
-  //     font-weight: bold;
-  //   }
-  //   &--text {
-  //     padding: 10px;
-  //     // border-left: 2px solid;
-  //     // border-right: 2px solid;
-  //     // border-color: darkgoldenrod;
-  //     text-align: left;
-  //     height:60%;
-  //   }
-
-  // }
 }
 
 // CHOOSE SECTION
@@ -416,10 +407,12 @@ figure {
 
 // TEAM SECTION
 #team {
+  padding-bottom: 40px;
+  padding-top: 70px;
+
   .block__text {
     margin-bottom: 10px;
   }
-
   .person {
     margin-bottom: 10px;
   }
@@ -791,6 +784,16 @@ figure {
 
 @media all and (max-width: 900px), (max-device-width: 900px) {
 
+  #simplecookienotification_v01 {
+    height: 20vh;
+    a, span {
+      font-size: xxx-large !important;
+    }
+  }
+  .bar {
+    font-size: xxx-large;
+  }
+
   .block {
     display: block;
   }
@@ -914,18 +917,22 @@ figure {
       font-size: 2.5rem;
       margin:10px;
     }
+    form > input, textarea, button {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
     form {
       margin: 70px 30px 70px 30px;
       width: 94%;
       input {
         height: 90px;
         font-size: 32px;
-        border-width: 6px !important;
+        border-width: 3px !important;
         border-radius: 28px;
       }
       textarea {
         height: 20em;
-        border-width: 6px !important;
+        border-width: 3px !important;
         border-radius: 28px;
         &::placeholder {
           font-size: 32px;
@@ -934,7 +941,7 @@ figure {
       button {
         height: 90px;
         border-radius: 28px;
-        border-width: 6px;
+        border-width: 3px;
       }  
     }
     .sent {

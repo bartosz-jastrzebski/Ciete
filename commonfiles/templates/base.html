@@ -7,19 +7,23 @@
     <title>Cięte</title>
     <link rel="icon" type="image/png" href="{% static 'images/logo-small-brown.png' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- Matomo -->
     <!--<script type="text/javascript" src="{% static 'js/statictics.js' %}"></script>-->
-
   </head>
   <body style="overflow: hidden;">
 
+    <div class="progress-bar">
+      <div class="bar">
+        10%
+      </div>
+    </div>
+    <script src="{% static 'js/progress.js' %}"></script>
     <header id="home">
-      <nav class="navbar">
+      <nav class="navbar" style="display:none;">
         <div class="navbar-logo" id="home-link">
             <div class="navbar-logo__headers">
               <h2>CIĘTE</h2>
@@ -41,7 +45,7 @@
         <img id="img-home" src="{% static 'images/home.jpg' %}" alt="">
       </div>
     </header>
-
+    <script>Progress(20)</script>
     
     {% block content %}
     {% endblock %}
@@ -119,25 +123,26 @@
     </footer>
 
     {% get_current_language as lang_code %}
-    <div class="languages">
+    <div class="languages" style="display:none;">
       <a href="/en/" class="{% if lang_code == 'en' %}active{% endif %}">EN</a>
       <a href="/pl/" class="{% if lang_code == 'pl' %}active{% endif %}">PL</a>
     </div>
 
+    <script>Progress(90)</script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/gallery.js' %}" ></script>
     <script src="{% static 'js/contact.js' %}"></script>
     <script>
       window.onload = (event)=> {
+        Progress(100)
         document.body.style.overflow = "auto";
         Main();
         Gallery();
-        console.log('Loaded')
+        navbar.style.display = 'flex';
+        languages.style.display = 'flex';
+        progressBar.parentElement.style.display = 'None';
       }
-      window.onbeforeunload = function () {
-         window.scrollTo(0, 0);
-         
-      }
+      window.onbeforeunload = function () {window.scrollTo(0, 0);}
     </script>
   </body>
 

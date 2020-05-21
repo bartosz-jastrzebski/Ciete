@@ -26,6 +26,8 @@
       </div>
  </section>
 
+ <script>Progress(30)</script>
+
 <section id="about" class="block">
       <div class="block__content small-gallery">
         <img src="{% static 'images/choose1.jpg' %}" alt="" class="translated">
@@ -49,6 +51,8 @@
         </div>
       </div>
 </section>
+
+<script>Progress(40)</script>
 
 <section id="portfolio" class="block">
       {% get_main_page_galleries as galleries %}
@@ -76,11 +80,13 @@
       </div>
 </section>
 
+<script>Progress(60)</script>
+
 <section id="team" class="block">
       <div class="block__header">
         <h1>{% trans 'OUR' %} <strong>{% trans 'TEAM' %}</strong></h1>
-        <p class="block__text">{% trans 'Two enginners / constructors and one architect. Close friends and makers. Share various areas of expertise' %}</p>
-
+        <p class="block__text">{% trans 'Two enginners / constructors and one architect.' %} <br> {% trans 'Close friends and makers. Share various areas of expertise' %}</p>
+        <p></p>
         <div class="person">
           <strong>Natalia</strong>
           <p>{% trans 'design concepts' %}</p>
@@ -110,7 +116,7 @@
             <h4 class="m-top-20">Natalia <strong>Budnik</strong></h4>
             <div class="separator"></div>
             <h5>+48 692 291 001</h5>
-            <img class="signature" src="{% static 'images/team1-bottom.png' %}" alt="">
+            <!-- <img class="signature" src="{% static 'images/team1-bottom.png' %}" alt=""> -->
           </div>
 
           <div class="team-member">
@@ -118,7 +124,7 @@
             <h4 class="m-top-20">Tomasz <strong>Budnik</strong></h4>
             <div class="separator"></div>
             <h5>+48 721 323 373</h5>
-            <img class="signature" src="{% static 'images/team2-bottom.png' %}" alt="">
+            <!-- <img class="signature" src="{% static 'images/team2-bottom.png' %}" alt=""> -->
           </div>
 
           <div class="team-member">
@@ -126,10 +132,12 @@
             <h4 class="m-top-20">Krzysztof <strong>Kita</strong></h4>
             <div class="separator"></div>
             <h5>+48 721 721 137</h5>
-            <img class="signature" src="{% static 'images/team3-bottom.png' %}" alt="">
+            <!-- <img class="signature" src="{% static 'images/team3-bottom.png' %}" alt=""> -->
           </div>
         </div>
       </div>
 
 </section >
+
+<script>Progress(80)</script>
 {% endblock %}

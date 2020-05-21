@@ -1,8 +1,9 @@
 var counter = 0;
 
+var navbar = document.getElementsByTagName('nav')[0]
+var languages = document.getElementsByClassName('languages')[0]
 function Main () {
 
-    
 var scrollIds = ['home', 'offer', 'portfolio', 'team', 'contact' ]
 
 var overlay = document.getElementsByClassName('overlay')[0]
@@ -13,29 +14,27 @@ var imgHome = document.getElementById('img-home')
 var imgHomeHeight = this.getComputedStyle(imgHome)['height']
 imgHomeHeight = Number(imgHomeHeight.replace('px', ''))
 
-overlay.style.height = `${imgHomeHeight}px`;
-
-var navbar = document.getElementsByTagName('nav')[0]
-var navbarHeight = this.getComputedStyle(navbar)['height']
-navbarHeight = Number(navbarHeight.replace('px', ''))
-
 var sectionAbout = document.getElementById('about')
 var aboutHeight = this.getComputedStyle(sectionAbout)['height']
 aboutHeight = Number(aboutHeight.replace('px', ''))
 
-var portfolio = document.getElementById('portfolio')
-// var portfolioPosition = portfolio.getBoundingClientRect()['height']
-// var team = document.getElementById('team')
-// var contact = document.getElementById('contact')
-
-// var aboutText = sectionAbout.getElementsByClassName('block__text--choose')[0].children
+var navbarHeight = this.getComputedStyle(navbar)['height']
+navbarHeight = Number(navbarHeight.replace('px', ''))
 
 var position = 0;
 var images = sectionAbout.getElementsByTagName('img');
-
-
-var mov = 0
 var animationCountdown = 0
+
+images[2].setAttribute('src', '/static/images/choose3.jpg')
+images[3].setAttribute('src', '/static/images/choose4.jpg')
+images[4].setAttribute('src', '/static/images/choose5.jpg')
+
+animate();
+scrollIds.forEach(scrollEvent)
+
+if (window.outerWidth > 1060) {
+    document.onscroll = ScrollAnimate
+} 
 
 function scrollEvent (id) {
     let obj = document.getElementById(`${id}-link`)
@@ -47,51 +46,20 @@ function scrollEvent (id) {
     })
 }
 
-scrollIds.forEach(scrollEvent)
-
-if (window.outerWidth > 1060) {
-    document.onscroll = ScrollAnimate
-} 
-
-images[2].setAttribute('src', '/static/images/choose3.jpg')
-images[3].setAttribute('src', '/static/images/choose4.jpg')
-images[4].setAttribute('src', '/static/images/choose5.jpg')
-animate();
-
-document.body.onresize = function() {
-    this.imgHome = document.getElementById('img-home')
-    imgHomeHeight = this.getComputedStyle(imgHome)['height']
-    imgHomeHeight = Number(imgHomeHeight.replace('px', ''))
-    overlay.style.height = `${imgHomeHeight}px`;
-}
-
 function ScrollAnimate() {
-
     let offset = window.pageYOffset;
-    console.log('Offset');
-    console.log(offset);
-    console.log('Overlay');
-    console.log(overlayHeight)
-    if (offset < overlayHeight) {
-
-        let overlayValue = overlayHeight-offset;
-        overlay.style.height = `${overlayValue}px`;
-
-        if (offset > overlayValue) {
-            navbar.classList.add('white')
-        } else {
-            navbar.classList.remove('white')
-        }
-
-        if (offset + navbarHeight - 10 >= imgHomeHeight) {
-            navbar.classList.add('bordered')
-        } else {
-            navbar.classList.remove('bordered')
-        }
- 
+    let overlayValue = overlayHeight-offset;
+    overlay.style.height = `${overlayValue}px`;
+    if (offset >= overlayValue) {
+        navbar.classList.add('white')
+    } else {
+        navbar.classList.remove('white')
     }
-
-   
+    if (offset + navbarHeight >= imgHomeHeight) {
+        navbar.classList.add('bordered')
+    } else {
+        navbar.classList.remove('bordered')
+    }
 }
 
 function AnimateGallery(num) {
@@ -157,11 +125,10 @@ function AnimateGallery(num) {
 function animate() {
     if (animationCountdown > 7 ) {
         animationCountdown = 0;
-    }
+        }
     AnimateGallery(animationCountdown)
     animationCountdown ++
     setTimeout(animate, 3000);
-}
-
+    }
 
 }
