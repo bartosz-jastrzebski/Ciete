@@ -145,20 +145,17 @@ ROSETTA_SHOW_AT_ADMIN_PANEL = True
 
 # Email
 
-if not DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-else:
-    with open('email_data.txt', 'r') as file:
-        host = file.readline().strip()
-        host_user = file.readline().strip()
-        host_password = file.readline().strip()
-        port= int(file.readline().strip())
+with open('email_data.txt', 'r') as file:
+    host = file.readline().strip()
+    host_user = file.readline().strip()
+    host_password = file.readline().strip()
+    port= int(file.readline().strip())
 
-    EMAIL_HOST = host
-    EMAIL_HOST_USER = host_user
-    EMAIL_HOST_PASSWORD = host_password
-    EMAIL_PORT = port
-    EMAIL_USE_TLS = True
+EMAIL_HOST = host
+EMAIL_HOST_USER = host_user
+EMAIL_HOST_PASSWORD = host_password
+EMAIL_PORT = port
+EMAIL_USE_TLS = True
    
 
 

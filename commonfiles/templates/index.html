@@ -66,7 +66,7 @@
                   {% for photo in photos %}
                    {% thumbnail  photo.image "x300" as img %}
                     <div class="flex-item">
-                      <div class="gallery-container {{ forloop.counter }}" data-title="{{ gallery.title }}">
+                      <div class="gallery-container" data-title="{{ gallery.title }}" data-url="{{ img.url }}" data-number="{{ forloop.counter }}">
                         <div class="gallery-overlay"></div>
                         <img src="{{ img.url }}" alt="" style="display:inline-block">
                       </div>

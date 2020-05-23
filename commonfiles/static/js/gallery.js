@@ -8,7 +8,9 @@ function ShowItems(obj) {
     obj.onclick = function() {
         document.body.style.overflow = 'hidden';
         galleryTitle = this.dataset.title
-
+        imageURL = this.dataset.url
+        imageNumber = this.dataset.number - 1
+        
         var figure = document.createElement('figure')
         gallery.appendChild(figure)
         figure.innerHTML = `
@@ -20,7 +22,7 @@ function ShowItems(obj) {
             <i class="material-icons" style="display:none;">navigate_before</i>
             </div>
             <div id="middle">
-            <img id="full-photo" src="/media/galleries/${galleryTitle}/photo.jpg">
+            <img id="full-photo" src="${imageURL}">
             </div>
             <div id="next">
             <i class="material-icons" style="display:none;">navigate_next</i>
@@ -34,12 +36,13 @@ function ShowItems(obj) {
         var previous = middle[0]
         var next = middle[2]
         middle.forEach(changePhoto)
-
         var photos
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', `gallery/${galleryTitle}`, true);
-        xhr.responseType = 'json'
+        xhr.open('GET', `${document.URL}gallery/${galleryTitle}`, true);
+        console.log(`${document.URL}gallery/${galleryTitle}`);
+        
         xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.responseType = 'json'
         xhr.onreadystatechange = function(){
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
@@ -50,7 +53,7 @@ function ShowItems(obj) {
         }
         xhr.send();
 
-        var photoNum = 0
+        var photoNum = imageNumber
         var previousPhotoNum = 0
         function changePhoto(element) {
             element.onclick = function () {

@@ -15,15 +15,17 @@
     <!--<script type="text/javascript" src="{% static 'js/statictics.js' %}"></script>-->
   </head>
   <body style="overflow: hidden;">
-
-    <div class="progress-bar">
-      <div class="bar">
-        10%
+    <div class="loading-background">
+      <div class="progress-bar">
+        <div class="bar">
+          10%
+        </div>
       </div>
     </div>
+ 
     <script src="{% static 'js/progress.js' %}"></script>
     <header id="home">
-      <nav class="navbar" style="display:none;">
+      <nav class="navbar">
         <div class="navbar-logo" id="home-link">
             <div class="navbar-logo__headers">
               <h2>CIĘTE</h2>
@@ -123,7 +125,7 @@
     </footer>
 
     {% get_current_language as lang_code %}
-    <div class="languages" style="display:none;">
+    <div class="languages">
       <a href="/en/" class="{% if lang_code == 'en' %}active{% endif %}">EN</a>
       <a href="/pl/" class="{% if lang_code == 'pl' %}active{% endif %}">PL</a>
     </div>
@@ -138,9 +140,7 @@
         document.body.style.overflow = "auto";
         Main();
         Gallery();
-        navbar.style.display = 'flex';
-        languages.style.display = 'flex';
-        progressBar.parentElement.style.display = 'None';
+        progressBar.parentElement.parentElement.style.display = 'None';
       }
       window.onbeforeunload = function () {window.scrollTo(0, 0);}
     </script>

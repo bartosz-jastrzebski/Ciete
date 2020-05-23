@@ -38,7 +38,7 @@ def send_contact_data(request):
     user_email = request.POST['email']
 
     message = request.POST['message']
-    company_subject = 'Cięte - wiadomość od {} '.format(user_name)
+    company_subject = 'Cięte - wiadomość od {}'.format(user_name)
 
     user_subject = translation.gettext_lazy('Thank you for the message')
     user_message = None

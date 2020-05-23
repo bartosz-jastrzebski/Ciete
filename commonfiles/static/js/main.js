@@ -21,6 +21,7 @@ aboutHeight = Number(aboutHeight.replace('px', ''))
 var navbarHeight = this.getComputedStyle(navbar)['height']
 navbarHeight = Number(navbarHeight.replace('px', ''))
 
+
 var position = 0;
 var images = sectionAbout.getElementsByTagName('img');
 var animationCountdown = 0
@@ -55,6 +56,9 @@ function ScrollAnimate() {
     } else {
         navbar.classList.remove('white')
     }
+    console.log(offset);
+    console.log(navbarHeight);
+    console.log(imgHomeHeight);
     if (offset + navbarHeight >= imgHomeHeight) {
         navbar.classList.add('bordered')
     } else {
