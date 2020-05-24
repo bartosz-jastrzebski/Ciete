@@ -7,10 +7,9 @@ galleryItems.forEach(ShowItems);
 function ShowItems(obj) {
     obj.onclick = function() {
         document.body.style.overflow = 'hidden';
-        galleryTitle = this.dataset.title
-        imageURL = this.dataset.url
-        imageNumber = this.dataset.number - 1
-        
+        galleryTitle = this.dataset.title;
+        var photoNum = this.dataset.number - 1; 
+
         var figure = document.createElement('figure')
         gallery.appendChild(figure)
         figure.innerHTML = `
@@ -22,7 +21,15 @@ function ShowItems(obj) {
             <i class="material-icons" style="display:none;">navigate_before</i>
             </div>
             <div id="middle">
-            <img id="full-photo" src="${imageURL}">
+            <svg width="100" height="100" id="circle-loader">
+            <defs>
+                <linearGradient id="myGradient" gradientTransform="rotate(90)">
+                <stop offset="5%"  stop-color="grey" />
+                <stop offset="80%" stop-color="transparent" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="40" stroke="url('#myGradient')" stroke-width="15px" fill="rgba(1,1,1,0)" />
+            </svg>
             </div>
             <div id="next">
             <i class="material-icons" style="display:none;">navigate_next</i>
@@ -30,34 +37,53 @@ function ShowItems(obj) {
         </div>
         <div class='created__gallery--bottom'></div>`
 
-        var image = document.getElementById('full-photo')
+        var circle = document.getElementById('circle-loader')
         var middle = document.getElementsByClassName('created__gallery--middle')[0]
         middle = Array.from(middle.children)
         var previous = middle[0]
         var next = middle[2]
         middle.forEach(changePhoto)
+        
+        var img = new Image();
+        middle[1].appendChild(img)
+        img.onload = function() {
+            // img.style.display = 'block'
+            circle.style.zIndex = -1
+            }
+
         var photos
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', `${document.URL}gallery/${galleryTitle}`, true);
-        console.log(`${document.URL}gallery/${galleryTitle}`);
-        
-        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.open('GET', `gallery/${galleryTitle}`, true);
         xhr.responseType = 'json'
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         xhr.onreadystatechange = function(){
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
-                next.firstElementChild.style.display = 'block'
                 photos = xhr.response['photos']
+                img.src = photos[photoNum];
+                switch(photoNum) {
+                    case 0:
+                        next.firstElementChild.style.display = 'block'
+                        break;
+                    case photos.length -1:
+                        previous.firstElementChild.style.display = 'block'
+                        break;
+                    default:
+                        previous.firstElementChild.style.display = 'block'
+                        next.firstElementChild.style.display = 'block'
+                        break;
+
+                    }
                 }
             }
         }
         xhr.send();
 
-        var photoNum = imageNumber
         var previousPhotoNum = 0
         function changePhoto(element) {
-            element.onclick = function () {
-
+            element.onclick = function DisplayPhoto () {
+                circle.style.zIndex = 1
+                // img.style.display= 'none'
                 if (this.id == 'next' || this.id == 'middle') {
                     photoNum ++
                     previous.firstElementChild.style.display = 'block'
@@ -84,7 +110,7 @@ function ShowItems(obj) {
                 }
                 if (photoNum != previousPhotoNum) {
                     var toSet = photos[photoNum]
-                    image.setAttribute('src', toSet)
+                    img.setAttribute('src', toSet)
                 }
             }
         }
