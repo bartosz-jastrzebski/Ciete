@@ -3,7 +3,7 @@ from django.utils.html import mark_safe
 from django.conf import settings
 from .models import Gallery, Photo
 from .forms import ResizeForm
-
+from sorl.thumbnail.admin import AdminImageMixin
 
 def remove_from_main(modeladmin, request, queryset):
     queryset.update(main=False)
@@ -17,13 +17,13 @@ remove_from_main.short_description = 'Remove from main page'
 add_to_main.short_description = 'Show on main page'
 
 
-class ImageInline(admin.StackedInline):
+class ImageInline(AdminImageMixin, admin.StackedInline):
     model = Photo
     extra = 0
     exclude = ['name']
 
 
-class GalleryAdmin(admin.ModelAdmin):
+class GalleryAdmin(AdminImageMixin, admin.ModelAdmin):
     list_display = ['title', 'main', 'gallery_thumbnail', 'photos', 'created', 'updated']
     list_filter = ['main']
     search_fields = ['title', 'location', 'description']
@@ -31,25 +31,25 @@ class GalleryAdmin(admin.ModelAdmin):
     list_per_page = 10
     inlines = [ImageInline]
     actions = [remove_from_main, add_to_main]
-    form = ResizeForm
+    # form = ResizeForm
     fieldsets = (
         ('Main Fields', {
-            'fields': ('title', 'description', 'location', 'thumbnail')
+            'fields': ('title', 'description', 'location')
         }),
         ('Options', {
-            'fields': ('resize', 'main', 'javascript')
+            'fields': ('main', 'javascript')
         })
     )
 
-    def save_model(self, request, obj, form, change):
-        resize = int(form.cleaned_data['resize'])
-        obj.save(resize=resize)
+    # def save_model(self, request, obj, form, change):
+    #     resize = int(form.cleaned_data['resize'])
+    #     obj.save(resize=resize)
         
     def photos(self, instance):
         return instance.photos.count()
 
     def gallery_thumbnail(self, instance):
-        src = settings.MEDIA_URL + str(instance.thumbnail)
+        src = instance.photos.first().image.url
         return mark_safe('<img src="{}" width="160" height="100" alt="No thumbnail">'.format(src))
 
     def javascript(self, instance):

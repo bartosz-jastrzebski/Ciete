@@ -150,7 +150,8 @@
       }
       window.onbeforeunload = function () {
         progressBar.parentElement.parentElement.style.display = 'block'
-        Progress(0)
+        Progress(10)
+        document.body.style.overflow = "hidden";
         window.scrollTo(0, 0);
       }
     </script>
