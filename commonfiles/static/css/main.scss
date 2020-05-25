@@ -606,7 +606,7 @@ figure {
     // margin-right: auto;
     display:flex; //remove on full site
     flex-direction: column;
-    width: 24vw;
+    width: 28vw;
   }
 
   &__item--form {
@@ -683,6 +683,12 @@ figure {
      i {
       color: $form-placeholder-color;
       transition: hover 1s ease-in-out;
+      }
+    .one {
+      opacity: 0;
+    }
+    .three {
+      opacity: 0;
     }
    }
 
@@ -725,13 +731,13 @@ figure {
     border-bottom-width: 0px;
     border-left-width: 0px;
     border-right-width: 0px;
-    transition: transform 3s ease; 
+    transition: transform 2s ease; 
 
   }
   .top {
     transform-origin: top;
-    // border-top-color: #D8D5E0;
-    border-top-color: #FF4C52;
+    border-top-color: #D8D5E0;
+    // border-top-color: #FF4C52;
     transform-origin: top;
     transform: rotateX(270deg);
     transition: transform 1s ease-in-out;
@@ -739,22 +745,22 @@ figure {
   }
   .bottom {
     transform-origin: bottom;
-    // border-bottom-color: whi0te;
-    border-bottom-color: #FF595E;
+    border-bottom-color: white;
+    // border-bottom-color: #FF595E;
     transform-origin: bottom;
     transform: translateY(1000px)
   }
   .left {
     transform-origin: left;
-    // border-left-color: white;
-    border-left-color: #FF595E;
+    border-left-color: white;
+    // border-left-color: #FF595E;
     transform-origin: left;
     transform: translateY(1000px)
   }
   .right {
     transform-origin: right;
-    // border-right-color: #CFCCD6;
-    border-right-color: #FF4248;
+    border-right-color: #CFCCD6;
+    // border-right-color: #FF4248;
     transform-origin: right;
     transform: translateY(1000px)
   }
@@ -766,23 +772,18 @@ figure {
   opacity: 0;
   text-align: center;
   color: $background-color;
-  transition: opacity 4s ease-in;
+  transition: opacity 3s ease-in;
 } 
 .unsent {
   display: none;
   text-align: center;
   color: $background-color;
+  opacity: 0.8;
 }
 
 
   
 // MEDIA
-
-// @media all and (min-width: 900px), (min-device-width: 900px) {
-//   .block__text {
-//     margin: 30px 120px 30px 0;
-//   }
-// }
 
 
 @media all and (max-width: 1060px), (max-device-width: 1060px) {

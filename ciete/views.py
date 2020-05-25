@@ -26,6 +26,7 @@ class ConstructionView(TemplateView):
 @require_GET
 def get_gallery_photos(request, title):
     gallery = Gallery.objects.get(title=title)
+    lang = translation.get_language()
     photos = [photo.image.url for photo in gallery.photos.all()]
     return JsonResponse({'photos': photos})
 
@@ -38,7 +39,7 @@ def send_contact_data(request):
     user_email = request.POST['email']
 
     message = request.POST['message']
-    company_subject = 'Cięte - wiadomość od {}'.format(user_name)
+    company_subject = 'Cięte - wiadomość od {} - {}'.format(user_name, user_email)
 
     user_subject = translation.gettext_lazy('Thank you for the message')
     user_message = None

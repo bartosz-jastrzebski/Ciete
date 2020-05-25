@@ -41,7 +41,7 @@ function Contact () {
 
         setTimeout(() => {
             envelope.style.transform = 'translateZ(-300px) translateX(2000px)';
-            sent.style.opacity = 1;
+            sent.style.opacity = 0.8;
         }, 4200);
 
         function setDimensions (e) {

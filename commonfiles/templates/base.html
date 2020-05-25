@@ -67,7 +67,7 @@
          
             <div class="contact__item">
               <img class="contact__icon" src="{% static 'images/phone.png' %}" alt="" style="opacity:0;">
-              <div class="contact__text">
+              <div class="contact__text" id="welcome-message">
                 <strong class="contact__text--title">{% trans 'You are always welcome' %}</strong>
                 <br>
                 <strong class="contact__text--title">{% trans 'to leave us message' %}</strong>
@@ -118,7 +118,11 @@
               {{ form.email }}
               {{ form.message }}
               {% csrf_token %}
-            <button type="submit" class="btn-send"><i class="material-icons">double_arrow</i></button>
+            <button type="submit" class="btn-send">
+              <i class="material-icons one">double_arrow</i>
+              <i class="material-icons two">double_arrow</i>
+              <i class="material-icons three">double_arrow</i>
+            </button>
           </form>
           </div>
         </div>
@@ -144,7 +148,11 @@
         Gallery();
         progressBar.parentElement.parentElement.style.display = 'None';
       }
-      window.onbeforeunload = function () {window.scrollTo(0, 0);}
+      window.onbeforeunload = function () {
+        progressBar.parentElement.parentElement.style.display = 'block'
+        Progress(0)
+        window.scrollTo(0, 0);
+      }
     </script>
   </body>
 
