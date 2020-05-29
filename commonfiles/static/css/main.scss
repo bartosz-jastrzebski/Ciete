@@ -11,13 +11,13 @@ $button-hoover-color: #e1d89f; //#C3AA69;
 $overlay-color: rgba(0, 0, 0, 0.3);
 $main-font-color: #545454; //797979
 $main-font-family: 'Nunito Sans', sans-serif;
-$main-font-size: 16px;
+$main-font-size: 1rem;
 $main-font-weight: 400;
 $title-font-size: 16px;
 $title-font-weight: 600;
 $title-font-color: #545454; // #2a3d45;  
 $navbar-font-family: 'Nunito Sans', sans-serif;
-$navbar-font-weight: 500;
+$navbar-font-weight: 400;
 $breaking-point: 38vw;
 
 // RESETS
@@ -104,6 +104,7 @@ body{
   position:absolute;
   width:100%;
   height:100%;
+  max-height: 100%;
   background-color: $overlay-color;
 }
 img {
@@ -123,10 +124,10 @@ img {
   font-weight: bold;
   a {
     color: $main-font-color;
-    font-weight: 600;
+    font-weight: $navbar-font-weight;
     &:visited, &:active {
       color: $main-font-color;
-      font-weight: 600;
+      font-weight: $navbar-font-weight;
     }
   }
 }
@@ -141,9 +142,9 @@ img {
   color: $background-color;
   font-family: $navbar-font-family;
   font-weight: $navbar-font-weight;
-  letter-spacing: 3px;
-  padding-top: 2vh;
-  padding-bottom: 1vh;
+  letter-spacing: 4px;
+  padding-top: 3vh;
+  padding-bottom: 0.3vh;
   position: fixed;
   width: 100%;
   display: flex;
@@ -170,21 +171,21 @@ img {
         padding-left: 1rem;
         text-align: center;
         letter-spacing: 20px;
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: 600;
         display: inline;
       }
       h6 {
         display: inline;
         letter-spacing: 10px;
-        font-size: 1.6rem;
+        font-size: 1rem;
         font-weight: 400;
         text-align: center;
         padding: 4px;
         align-self: flex-end;
       }
       span {
-        font-size: 40px;
+        font-size: 2rem;
         line-height: 12px;
         align-self: flex-start;
       }
@@ -194,15 +195,13 @@ img {
   &-menu {
     flex: 1 1 500px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-right: 6vw;
 
     &__item {
-      font-size: 16px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 0.5vh;
-      font-weight:$navbar-font-weight;
+      // margin-left: auto;
+      // margin-right: auto;
+      margin-bottom: 4px;
       align-self: flex-end;
     }
   }
@@ -294,13 +293,13 @@ img {
   h6 {
     font-size: 1rem;
     font-weight: $title-font-weight;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     margin: 15px 0 15px 0;
   }
 
   p {
     font-size: $main-font-size;
-    padding-left: 80px;
+    padding-left: 34px;
   }
 }
 
@@ -452,6 +451,7 @@ figure {
 
   .block__text {
     margin-bottom: 10px;
+    margin-right: 80px;
   }
   .person {
     margin-bottom: 10px;
@@ -532,7 +532,7 @@ figure {
   &__item--contact {
     flex: 1 1 50vw;
     display: grid;
-    grid-template-rows: fit-content(300px) auto;
+    grid-template-rows: fit-content(300px);
     justify-content: center;
     h2 {
       margin: 2% 0 2% 0;
@@ -548,20 +548,24 @@ figure {
     .contact__item {
       margin: 30px 10px 30px 10px;
       display: flex;
-      img {
-        // position: absolute;
+      &--welcome {
+        grid-column: 2 /3;
+      }
+    }
+    .contact__icon {
+        margin-right: 15px;
         width: auto;
         height: 30px;
-      }
+        justify-self: flex-end;
     }
     .contact__text {
        color: $footer-font-color;
-       
        letter-spacing: 2px;
        display: inline-block;
-       margin-left: 30px;
+       margin-left: 13px;
+       margin-top: 3px;
        &--title {
-        font-size: large;
+        // font-size: large;
         padding-bottom: 3px;
         color: $footer-font-color
        }
@@ -573,32 +577,19 @@ figure {
       }
     }
    }
-  &__item--logo {
-    text-align: center;
+   .top-logo {
+    height: auto;
+    width: 13vw;
+    align-self: end;
+    margin-bottom: 40px;
+   }
    .bottom-logo {
-      width: 200px;
-    }
-    .list-inline {
-      display: flex;
-      justify-content: space-around;
-      
-    }
-    a {
-      height: fit-content;
-    }
-    li {
-      display: inline-block;
-      img {
-        color: $background-color;
-        margin: 6px;
-        padding: 0;
-        width: 20px;
-        height: 20px;
-        opacity: 0.5;
+    height: auto;
+    width: 13vw;
+    align-self: end;
+    margin-bottom: 40px;
+   }
 
-      }
-    }
-  }
   #welcome-message {
     margin-left: 33px;
   }
@@ -615,6 +606,7 @@ figure {
     overflow: hidden;
     flex: 1 1 32vw;
     perspective-origin: center;
+    padding-top: 15px;
     perspective: 200px;
     max-width: 45vw;
     .form-wrap {
@@ -624,8 +616,9 @@ figure {
     h2 {
       text-align: left;
       margin-top: 5px;
-      margin-bottom: 15px;
-      font-size: large;
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
       font-family: $main-font-family;
       font-weight: 400;
       color: $background-color;
@@ -643,7 +636,7 @@ figure {
      background: $form-background;    
      border: 1px solid;
      margin:2px;
-     margin-bottom: 10px;
+     margin-bottom: 5px;
      border-color: $form-border;
      font-family: $main-font-family;
      color: $background-color;
@@ -860,7 +853,7 @@ figure {
         font-size: 1rem;
       }
       p {
-        font-size: 15px;
+        font-size: 1rem;
       }
     }
   }
@@ -909,15 +902,6 @@ figure {
     }
 
   }
-  .wrapper__item {
-    &--logo .bottom-logo {
-      width: 48%;
-    }
-    &--form form {
-      width: 34vw;
-    }
-  }
-
   .navbar-menu__item {
     font-size: 2rem;
     margin-top: 14px;
@@ -955,6 +939,12 @@ figure {
   .wrapper {
     #welcome-message {
       display: none;
+    }
+    .bottom-logo {
+      width: 40vw;
+    }
+    .top-logo {
+      width: 40vw;
     }
     display: block;
     padding: 60px 0 0 0;
@@ -1020,11 +1010,20 @@ figure {
       margin-right: auto;
     }
     &--contact {
-      .contact__item img {
-        height: 80px;
+      .contact__icon {
+        height: 100px;
+        margin-top: 45px;
+        margin-right: 45px;
       }
       .contact__text {
-        margin-left: 70px
+        margin-left: 0;
+        margin-top: 45px;
+        &--title {
+          font-size: 2rem;
+        }
+        &--content p {
+          font-size: 2rem;
+        }
       }
     }
     i {

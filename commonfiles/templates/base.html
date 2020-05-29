@@ -58,24 +58,20 @@
       <div class="wrapper">
 
         <div class="wrapper__item--contact">
-          <div class="wrapper__item--logo">
-            <img class="bottom-logo" src="{% static 'images/logo-top.png' %}">
+            <img class="top-logo" src="{% static 'images/logo-top.png' %}">
             <img class="bottom-logo" src="{% static 'images/logo-bottom.png' %}">
-          </div>
-      
-          <div class="wrapper__item--address">
-         
-            <div class="contact__item">
-              <img class="contact__icon" src="{% static 'images/phone.png' %}" alt="" style="opacity:0;">
-              <div class="contact__text" id="welcome-message">
+    
+            <div class="contact__item--welcome">
+              <div class="contact__text">
                 <strong class="contact__text--title">{% trans 'You are always welcome' %}</strong>
                 <br>
                 <strong class="contact__text--title">{% trans 'to leave us message' %}</strong>
               </div>
             </div>
+            
+            <img class="contact__icon" src="{% static 'images/phone.png' %}" alt="">
 
-            <div class="contact__item">
-              <img class="contact__icon" src="{% static 'images/phone.png' %}" alt="">
+            <div class="contact__item--phone">
               <div class="contact__text">
                 <strong class="contact__text--title">{% trans 'Telephone' %}:</strong>
                 <div class="contact__text--content">
@@ -84,8 +80,9 @@
               </div>
             </div>
 
-            <div class="contact__item">
-              <img class="contact__icon" src="{% static 'images/email.png' %}" alt="">
+            <img class="contact__icon" src="{% static 'images/email.png' %}" alt="">
+
+            <div class="contact__item--email">
               <div class="contact__text">
                 <strong class="contact__text--title">{% trans 'Email' %}:</strong>
                 <div class="contact__text--content">
@@ -93,7 +90,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
 
         <div class="wrapper__item--form">
