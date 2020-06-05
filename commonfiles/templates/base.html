@@ -6,13 +6,15 @@
     <meta charset="utf-8">
     <title>Cięte</title>
     <link rel="icon" type="image/png" href="{% static 'images/logo-small-brown.png' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- Matomo -->
     <!--<script type="text/javascript" src="{% static 'js/statictics.js' %}"></script>-->
+    <script src="https://kit.fontawesome.com/d83d5530cc.js" crossorigin="anonymous"></script>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
   </head>
   <body style="overflow: hidden;">
     <div class="loading-background">
@@ -39,6 +41,11 @@
           <div class="navbar-menu__item" ><a href="" id="portfolio-link">{% trans 'PROJECTS' %}</a></div>
           <div class="navbar-menu__item" ><a href="" id="team-link">{% trans 'ABOUT' %}</a></div>
           <div class="navbar-menu__item" ><a href="" id="contact-link">{% trans 'CONTACT' %}</a></div>
+          <div class="navbar-menu__item desktop-insta" >
+            <a href="https://www.instagram.com/ciete.warszawa/" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
       </nav>
 

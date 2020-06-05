@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% load thumbnail %}
+
+{% block content %}
+<section id="portfolio" class="block">
+    {% get_main_page_galleries as galleries %}
+    <div class="block__header">
+      <h1>{% trans 'ALL' %} <strong>{% trans 'PROJECTS' %}</strong></h1>
+
+      <div class="block__content no-margin">
+          {% for gallery in galleries %}
+            <div class="block__content--gallery">
+              {% with gallery.get_first as photos  %}
+                {% for photo in photos %}
+                 {% thumbnail  photo.image "x300" as img %}
+                  <div class="flex-item">
+                    <div class="gallery-container" data-title="{{ gallery.title }}" data-number="{{ forloop.counter }}">
+                      <div class="gallery-overlay"></div>
+                      <img src="{{ img.url }}" alt="" style="display:inline-block">
+                    </div>
+                  </div>
+                  {% endthumbnail %}
+                {% endfor %}
+              {% endwith %}
+            </div>
+          {% endfor %}
+      </div>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block domready %}
+    
+{% endblock %}
