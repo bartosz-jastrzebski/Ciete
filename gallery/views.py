@@ -1,17 +1,30 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponse
 from .models import Gallery
+from ciete.forms import ContactForm
 
 
 def galleries_list(request):
-    images = Image.objects.all()
-    paginator = Paginator(images, 4)
+    galleries = Gallery.objects.all()
+    paginator = Paginator(galleries, 3)
     page = request.GET.get('page')
+    print(page)
+    print('Max pages: ', paginator.num_pages)
+    print(dir(request.GET))
+    print(request)
     try: 
-        images = paginator.page(page)
+        galleries = paginator.page(page)
     except PageNotAnInteger:
-        images = paginator.page(1)
-
+        galleries = paginator.page(1)
+    except EmptyPage:
+        if request.is_ajax():
+            return HttpResponse('')
+        galleries = paginator.page(paginator.num_pages)
+    if request.is_ajax():
+        return render(request, 'gallery_ajax.html', {'galleries': galleries})
+    return render(request, 'gallery.html', {'galleries': galleries,
+                                            'form': ContactForm})
 
 

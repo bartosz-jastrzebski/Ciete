@@ -60,7 +60,6 @@ function ShowItems(obj) {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
                 photos = xhr.response['photos']
-                console.log(photos)
                 img.src = photos[photoNum];
                 switch(photoNum) {
                     case 0:
@@ -90,11 +89,8 @@ function ShowItems(obj) {
                     previous.firstElementChild.style.display = 'block'
                 } else {
                     photoNum --
-                    console.log('Minus')
                     next.firstElementChild.style.display = 'block'
                 }
-                
-                console.log(photoNum);
                 switch(photoNum){
                     case -1:
                         photoNum = 0
@@ -113,7 +109,6 @@ function ShowItems(obj) {
                 }
                 // if (photoNum != previousPhotoNum) {
                 var toSet = photos[photoNum]
-                console.log(toSet)
                 img.setAttribute('src', toSet)
                 // }
             }

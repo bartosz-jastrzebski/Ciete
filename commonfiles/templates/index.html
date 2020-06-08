@@ -4,6 +4,13 @@
 {% load static %}
 {% load thumbnail %}
 {% block content %}
+
+<div class="overlay-wrapper">
+  <div class="overlay"></div>
+  <img id="img-home" src="{% static 'images/home.jpg' %}" alt="">
+</div>
+
+
  <section id="offer" class="block">
      <div class="block__header">
         <h1>{% trans 'WHAT WE' %} <strong>{% trans 'DO' %}</strong>?</h1>
@@ -29,12 +36,14 @@
  <script>Progress(30)</script>
 
 <section id="about" class="block">
-      <div class="block__content small-gallery">
-        <img src="{% static 'images/choose1.jpg' %}" alt="" class="translated">
-        <img src="{% static 'images/choose2.jpg' %}" alt="" class="translated">
-        <img src="" alt="" class="translated">
-        <img src="" alt="" class="translated">
-        <img src="" alt="" class="translated">
+      <div class="block__content">
+        <div class="small-gallery">
+          <img src="{% static 'images/choose1.jpg' %}" alt="" class="translated">
+          <img src="{% static 'images/choose2.jpg' %}" alt="" class="translated">
+          <img src="" alt="" class="translated">
+          <img src="" alt="" class="translated">
+          <img src="" alt="" class="translated">
+        </div>
       </div>
 
       <div class="block__header">
@@ -140,4 +149,22 @@
 </section >
 
 <script>Progress(80)</script>
+{% endblock %}
+
+{% block domready %}
+<script>
+  window.onload = (event)=> {
+    Progress(100)
+    document.body.style.overflow = "auto";
+    Main();
+    Gallery();
+    progressBar.parentElement.parentElement.style.display = 'None';
+  }
+  window.onbeforeunload = function () {
+    progressBar.parentElement.parentElement.style.display = 'block'
+    Progress(10)
+    document.body.style.overflow = "hidden";
+    window.scrollTo(0, 0);
+  }
+</script>
 {% endblock %}

@@ -48,11 +48,6 @@
           </div>
         </div>
       </nav>
-
-      <div class="overlay-wrapper">
-        <div class="overlay"></div>
-        <img id="img-home" src="{% static 'images/home.jpg' %}" alt="">
-      </div>
     </header>
     <script>Progress(20)</script>
     
@@ -144,21 +139,10 @@
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/gallery.js' %}" ></script>
     <script src="{% static 'js/contact.js' %}"></script>
-    <script>
-      window.onload = (event)=> {
-        Progress(100)
-        document.body.style.overflow = "auto";
-        Main();
-        Gallery();
-        progressBar.parentElement.parentElement.style.display = 'None';
-      }
-      window.onbeforeunload = function () {
-        progressBar.parentElement.parentElement.style.display = 'block'
-        Progress(10)
-        document.body.style.overflow = "hidden";
-        window.scrollTo(0, 0);
-      }
-    </script>
+
+    {% block domready %}
+    {% endblock %}
+
   </body>
 
 

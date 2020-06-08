@@ -64,7 +64,8 @@ function ScrollAnimate() {
 }
 
 function AnimateGallery(num) {
-                
+    var container = document.getElementsByClassName('small-gallery')[0]
+    container.style.width = `${images[0].width}px`
     switch (num) {
         case 0:
             position += images[0].width
@@ -72,22 +73,28 @@ function AnimateGallery(num) {
             images[1].style.transform = `translateX(-${position}px)`
             images[2].style.transform = `translateX(-${position}px)`
             images[3].style.transform = `translateX(-${position}px)`
+            images[4].style.transform = `translateX(-${position}px)`
             break;
         case 1:
-            position += images[2].width
+            position += images[1].width
+            images[0].style.transform = `translateX(-${position}px)`
             images[1].style.transform = `translateX(-${position}px)`
             images[2].style.transform = `translateX(-${position}px)`
             images[3].style.transform = `translateX(-${position}px)`
             images[4].style.transform = `translateX(-${position}px)`
             break;
         case 2:
-            position += images[3].width
+            position += images[2].width
+            images[0].style.transform = `translateX(-${position}px)`
+            images[1].style.transform = `translateX(-${position}px)`
             images[2].style.transform = `translateX(-${position}px)`
             images[3].style.transform = `translateX(-${position}px)`
             images[4].style.transform = `translateX(-${position}px)`
             break;
         case 3:
             position += images[3].width
+            images[0].style.transform = `translateX(-${position}px)`
+            images[1].style.transform = `translateX(-${position}px)`
             images[2].style.transform = `translateX(-${position}px)`
             images[3].style.transform = `translateX(-${position}px)`
             images[4].style.transform = `translateX(-${position}px)`
@@ -95,30 +102,35 @@ function AnimateGallery(num) {
             // GOING BACK
         case 4:
             position -= images[3].width
+            images[0].style.transform = `translateX(-${position}px)`
+            images[1].style.transform = `translateX(-${position}px)`
             images[2].style.transform = `translateX(-${position}px)`
             images[3].style.transform = `translateX(-${position}px)`
             images[4].style.transform = `translateX(-${position}px)`
             break;
         case 5:
             position -= images[2].width
+            images[0].style.transform = `translateX(-${position}px)`
             images[1].style.transform = `translateX(-${position}px)`
             images[2].style.transform = `translateX(-${position}px)`
             images[3].style.transform = `translateX(-${position}px)`
             images[4].style.transform = `translateX(-${position}px)`
             break;
         case 6:
+            position -= images[1].width
+            images[0].style.transform = `translateX(-${position}px)`
+            images[1].style.transform = `translateX(-${position}px)`
+            images[2].style.transform = `translateX(-${position}px)`
+            images[3].style.transform = `translateX(-${position}px)`
+            images[4].style.transform = `translateX(-${position}px)`
+            break;
+        case 7:
             position -= images[0].width
             images[0].style.transform = `translateX(-${position}px)`
             images[1].style.transform = `translateX(-${position}px)`
             images[2].style.transform = `translateX(-${position}px)`
             images[3].style.transform = `translateX(-${position}px)`
-            break;
-        case 7:
-            position -= images[0].width
-            images[0].style.transform = `translateX(0px)`
-            images[1].style.transform = `translateX(0px)`
-            images[2].style.transform = `translateX(0px)`
-            images[3].style.transform = `translateX(0px)`
+            images[4].style.transform = `translateX(-${position}px)`
             break;
     }
 }

@@ -26,7 +26,7 @@ urlpatterns = i18n_patterns(
     path('send_contact/', send_contact_data, name='send'),
     path('gallery/<str:title>', get_gallery_photos, name='gallery_photos'),
     path('rosetta/', include('rosetta.urls')),
-    # path('galleries/', include('gallery.urls')),
+    path('galleries/', include('gallery.urls')),
 )
 
 if settings.DEBUG:

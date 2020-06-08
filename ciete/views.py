@@ -28,6 +28,7 @@ def get_gallery_photos(request, title):
     gallery = Gallery.objects.get(title=title)
     lang = translation.get_language()
     photos = [photo.image.url for photo in gallery.photos.all()]
+    print(photos)
     return JsonResponse({'photos': photos})
 
 
