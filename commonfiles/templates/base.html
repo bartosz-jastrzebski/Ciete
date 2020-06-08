@@ -37,9 +37,11 @@
         </div>
 
         <div class="navbar-menu">
-          <div class="navbar-menu__item" ><a href="" id="offer-link">{% trans 'SERVICES' %}</a></div>
-          <div class="navbar-menu__item" ><a href="" id="portfolio-link">{% trans 'PROJECTS' %}</a></div>
-          <div class="navbar-menu__item" ><a href="" id="team-link">{% trans 'ABOUT' %}</a></div>
+          <div class="navbar-menu__item" ><a href="{% url 'index' %}#offer" id="offer-link">{% trans 'SERVICES' %}</a></div>
+          {% if section == 'home' %}
+          <div class="navbar-menu__item" ><a href="" id="portfolio-link">{% trans 'PROJECTS' %}</a></div>   
+          {% endif %}
+          <div class="navbar-menu__item" ><a href="{% url 'index' %}#team" id="team-link">{% trans 'ABOUT' %}</a></div>
           <div class="navbar-menu__item" ><a href="" id="contact-link">{% trans 'CONTACT' %}</a></div>
           <div class="navbar-menu__item desktop-insta" >
             <a href="https://www.instagram.com/ciete.warszawa/" target="_blank">

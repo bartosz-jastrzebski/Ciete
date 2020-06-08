@@ -154,17 +154,19 @@
 {% block domready %}
 <script>
   window.onload = (event)=> {
-    Progress(100)
+    Progress(95)
     document.body.style.overflow = "auto";
     Main();
     Gallery();
-    progressBar.parentElement.parentElement.style.display = 'None';
-  }
-  window.onbeforeunload = function () {
-    progressBar.parentElement.parentElement.style.display = 'block'
-    Progress(10)
-    document.body.style.overflow = "hidden";
-    window.scrollTo(0, 0);
-  }
+    Progress(100)
+    progressBar.parentElement.parentElement.style.display = 'None';   
+    }
+    window.onbeforeunload = function () {
+      progressBar.parentElement.parentElement.style.display = 'block'
+      Progress(10)
+      document.body.style.overflow = "hidden";
+      window.scrollTo(0, 0);
+    }
 </script>
+
 {% endblock %}

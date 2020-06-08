@@ -2,10 +2,23 @@ var page = 1;
 var empty_page = false;
 var block_request = false;
 
+function scrollEvent (id) {
+    let obj = document.getElementById(`${id}-link`)
+    obj.addEventListener('click', function(event) {
+        event.preventDefault()
+        empty_page = true;
+        document.getElementById(id).scrollIntoView({
+            behavior: 'smooth'
+        })     
+    })
+}
+
+scrollEvent('contact');
+
 window.onscroll = function () {
     var contact = document.querySelector('#contact');
     var portfolio = document.querySelector('.block__content')
-    var margin = contact.offsetTop - 500;
+    var margin = contact.offsetTop - window.innerHeight;//600;
 
     if (window.pageYOffset > margin && 
         empty_page == false && 

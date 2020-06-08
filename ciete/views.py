@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, FormView
+from django.views.generic import TemplateView
 from django.template import loader
 from django.http import JsonResponse
 from django.shortcuts import render
@@ -15,7 +15,10 @@ from gallery.models import Gallery
 
 def index_view(request):
     form = ContactForm()
-    return render(request, 'index.html', {'form': form})
+    landing = request.GET.get('landing')
+    return render(request, 'index.html', {'form': form, 
+                                          'section': 'home',
+                                          'landing': landing})
 
 
 class ConstructionView(TemplateView):
@@ -28,7 +31,6 @@ def get_gallery_photos(request, title):
     gallery = Gallery.objects.get(title=title)
     lang = translation.get_language()
     photos = [photo.image.url for photo in gallery.photos.all()]
-    print(photos)
     return JsonResponse({'photos': photos})
 
 

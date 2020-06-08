@@ -21,6 +21,7 @@ def galleries_list(request):
     if request.is_ajax():
         return render(request, 'gallery_ajax.html', {'galleries': galleries})
     return render(request, 'gallery.html', {'galleries': galleries,
-                                            'form': ContactForm})
+                                            'form': ContactForm,
+                                            'section': 'gallery'})
 
 
