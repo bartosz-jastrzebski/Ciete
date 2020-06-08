@@ -107,10 +107,8 @@ function ShowItems(obj) {
                         next.firstElementChild.style.display = 'none'
                         break;
                 }
-                // if (photoNum != previousPhotoNum) {
                 var toSet = photos[photoNum]
                 img.setAttribute('src', toSet)
-                // }
             }
         }
         document.getElementById('close').onclick = function() {

@@ -10,10 +10,6 @@ def galleries_list(request):
     galleries = Gallery.objects.all()
     paginator = Paginator(galleries, 3)
     page = request.GET.get('page')
-    print(page)
-    print('Max pages: ', paginator.num_pages)
-    print(dir(request.GET))
-    print(request)
     try: 
         galleries = paginator.page(page)
     except PageNotAnInteger:

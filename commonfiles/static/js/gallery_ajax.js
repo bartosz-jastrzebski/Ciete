@@ -6,16 +6,14 @@ var portfolio = document.querySelector('.block__content .no-margin')
 window.onscroll = function () {
     var contact = document.querySelector('#contact');
     var margin = contact.offsetTop - 400;
-    // console.log(window.pageYOffset)
-    // console.log(margin)
+
     if (window.pageYOffset > margin && 
         empty_page == false && 
         block_request == false) {
-            console.log('Running')
+            
             block_request = true;
             page += 1
-            console.log(page)
-            
+
             var xhr = new XMLHttpRequest();
             xhr.open('GET', `?page=` + page, true);
             xhr.responseType = 'text'
