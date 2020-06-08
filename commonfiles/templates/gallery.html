@@ -18,6 +18,7 @@
     var navbar = document.querySelector('#home .navbar')
     navbar.classList.add('bordered')
     navbar.classList.add('white')
+    
     Progress(100)
     document.body.style.overflow = "auto";
     Gallery();
@@ -25,10 +26,16 @@
     progressBar.parentElement.style.display = 'None';
   }
   window.onbeforeunload = function () {
+    navbar.style.transition = 'None';
     progressBar.parentElement.parentElement.style.display = 'block'
     Progress(10)
     document.body.style.overflow = "hidden";
     window.scrollTo(0, 0);
   }
+  var content = document.querySelector(".block__content");
+  var observer = new MutationObserver(function() {
+    Gallery();
+  });
+  observer.observe(content, {subtree: true, childList: true});
 </script>
 {% endblock %}

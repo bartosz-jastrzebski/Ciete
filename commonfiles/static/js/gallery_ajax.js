@@ -1,16 +1,16 @@
 var page = 1;
 var empty_page = false;
 var block_request = false;
-var portfolio = document.querySelector('.block__content .no-margin')
 
 window.onscroll = function () {
     var contact = document.querySelector('#contact');
-    var margin = contact.offsetTop - 400;
+    var portfolio = document.querySelector('.block__content')
+    var margin = contact.offsetTop - 500;
 
     if (window.pageYOffset > margin && 
         empty_page == false && 
         block_request == false) {
-            
+
             block_request = true;
             page += 1
 
@@ -23,7 +23,6 @@ window.onscroll = function () {
             if (xhr.readyState == 4) {
                 if (xhr.status == 200) {
                     data = xhr.response
-                    console.log(data)
                     if (data == '') {
                         empty_page = true
                     } else {

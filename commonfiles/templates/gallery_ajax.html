@@ -1,5 +1,5 @@
 {% load thumbnail %}
-
+{% load static %}
 {% for gallery in galleries %}
   <div class="block__content--gallery">
     {% with gallery.get_first as photos  %}
@@ -16,3 +16,4 @@
     {% endwith %}
   </div>
 {% endfor %}
+
