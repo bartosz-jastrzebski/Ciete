@@ -15,10 +15,8 @@ from gallery.models import Gallery
 
 def index_view(request):
     form = ContactForm()
-    landing = request.GET.get('landing')
     return render(request, 'index.html', {'form': form, 
-                                          'section': 'home',
-                                          'landing': landing})
+                                          'section': 'home'})
 
 
 class ConstructionView(TemplateView):

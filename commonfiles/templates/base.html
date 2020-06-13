@@ -133,8 +133,10 @@
 
     {% get_current_language as lang_code %}
     <div class="languages">
-      <a href="/en/" class="{% if lang_code == 'en' %}active{% endif %}">EN</a>
-      <a href="/pl/" class="{% if lang_code == 'pl' %}active{% endif %}">PL</a>
+      <a href="{% if section == 'home' %}/en/{% else %}/en/galleries/{% endif %}" 
+         class="{% if lang_code == 'en' %}active{% endif %}">EN</a>
+      <a href="{% if section == 'home' %}/pl/{% else %}/pl/galleries/{% endif %}" 
+         class="{% if lang_code == 'pl' %}active{% endif %}">PL</a>
     </div>
 
     <script>Progress(90)</script>

@@ -4,6 +4,8 @@ from .views import galleries_list
 from ciete.views import get_gallery_photos
 
 
+app_name = 'gallery'
+
 urlpatterns = [
     path('', galleries_list ,name='all_galleries'),
     path('gallery/<str:title>', get_gallery_photos, name='gallery_photos'),

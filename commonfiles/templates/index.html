@@ -67,7 +67,7 @@
       {% get_main_page_galleries as galleries %}
       <div class="block__header">
         <h1>{% trans 'REALIZED' %} <strong>{% trans 'PROJECTS' %}</strong></h1>
-
+        <span id="top-gallery"><a href="{% url 'gallery:all_galleries' %}"><strong>{% trans 'SHOW ALL' %}</strong></a></span>
         <div class="block__content no-margin">
             {% for gallery in galleries %}
               <div class="block__content--gallery">
@@ -87,6 +87,7 @@
             {% endfor %}
         </div>
       </div>
+      <span id="bottom-gallery" ><a href="{% url 'gallery:all_galleries' %}"><strong>{% trans 'SHOW ALL' %}</strong></a></span>
 </section>
 
 <script>Progress(60)</script>

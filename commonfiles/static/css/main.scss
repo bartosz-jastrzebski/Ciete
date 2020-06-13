@@ -312,6 +312,22 @@ img {
 }
 
 // GALLERY SECTION
+#portfolio {
+  .block__header {
+    h1 {
+      display: inline;
+    }
+    span {
+      float: right;
+    }
+  }
+  #top-gallery {
+    display: block;
+  }
+  #bottom-gallery {
+    display: none;
+  }
+}
 
 .block__content--gallery {
   margin: 30px 0 30px 0;
@@ -350,8 +366,6 @@ img {
         opacity: 0.5;
       }
     }
-
-
   }
 }
 
@@ -838,6 +852,7 @@ figure {
     }
   }
 
+
   .progress-bar .bar {
     font-size: 3em;
   }
@@ -877,7 +892,13 @@ figure {
   #portfolio {
     margin-left: 15px;
     margin-right: 15px;
-    text-align: center
+    text-align: center;
+    #top-gallery {
+      display: none;
+    }
+    #bottom-gallery {
+    display: block;
+    }
   }
   .block__content--about {
     img {
